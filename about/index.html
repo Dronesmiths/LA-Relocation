@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Carol Anderson - LA Relocation</title>
+    <meta name="description"
+        content="Learn about Carol Anderson, a top-rated RE/MAX Realtor with over 25 years of experience serving Los Angeles, Santa Clarita, and Antelope Valley.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Montserrat:wght@400;500;600;700&family=Roboto+Condensed:wght@300;400;700;900&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://larelocation.com/#person",
+          "name": "Carol Anderson",
+          "url": "https://larelocation.com/about/",
+          "image": "https://larelocation.com/wp-content/uploads/2025/10/Carol-Anderson.webp",
+          "jobTitle": "Realtor",
+          "worksFor": {
+            "@type": "RealEstateAgent",
+            "name": "RE/MAX Gateway - LA Relocation"
+          },
+          "description": "Carol Anderson is a top-producing RE/MAX Realtor with over 30 years of experience serving Los Angeles County."
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How long have you been in real estate?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "I have been a licensed Realtor® since 1993, bringing over 30 years of experience to every transaction in the Los Angeles market."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Are you a solo agent or part of a team?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "I lead the dedicated L.A. Relocation team at RE/MAX Gateway, ensuring you have full support, resources, and availability throughout your journey."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What awards have you won?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "I am honored to have received the RE/MAX Lifetime Achievement Award, Hall of Fame induction, and the Diamond Club Award, recognizing consistent top-tier performance."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do you work with investors?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, I have extensive experience working with real estate investors, from single-family rentals to multi-unit properties and 1031 exchanges."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+    <style>
+        /* About Page Specific Styles */
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+
+        /* Bio Section */
+        #about-bio {
+            padding: 100px 20px;
+            background: #fff;
+            color: #333;
+        }
+
+        .bio-container {
+            max-width: 1200px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .bio-image {
+            flex: 1 1 450px;
+            position: relative;
+        }
+
+        .bio-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .bio-text {
+            flex: 1 1 500px;
+        }
+
+        .bio-text h2 {
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 900;
+            font-size: clamp(32px, 5vw, 48px);
+            text-transform: uppercase;
+            color: #111;
+            margin-bottom: 25px;
+            line-height: 1.1;
+        }
+
+        .bio-text h2 span {
+            color: #e63946;
+        }
+
+        .bio-text p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 32px;
+            color: #e63946;
+            margin-top: 20px;
+        }
+
+        /* Core Values */
+        #core-values {
+            padding: 100px 20px;
+            background: #111;
+            text-align: center;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 60px auto 0;
+        }
+
+        .value-card {
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            border-color: #e63946;
+        }
+
+        .value-icon {
+            font-size: 40px;
+            color: #e63946;
+            margin-bottom: 20px;
+        }
+
+        .value-card h3 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .value-card p {
+            color: #bbb;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .bio-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .bio-text {
+                padding: 0 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 🟥 Header -->
+    <script src="/js/header.js"></script>
+
+    <!-- 🏙️ About Page Hero -->
+    <section class="subpage-hero"
+        style="position:relative;height:60vh;min-height:450px;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;">
+        <!-- Background Image -->
+        <div
+            style="position:absolute;inset:0;background:url('https://larelocation.com/wp-content/uploads/2025/11/About-Carol-Anderson.webp') center/cover no-repeat;z-index:1;">
+        </div>
+        <!-- Dark Overlay -->
+        <div
+            style="position:absolute;inset:0;background:linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8));z-index:2;">
+        </div>
+        <!-- Content -->
+        <div style="position:relative;z-index:3;padding:20px;">
+            <h4
+                style="font-family:'Montserrat',sans-serif;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;font-size:16px;color:#e63946;font-weight:700;">
+                Meet Your Realtor</h4>
+            <h1
+                style="font-family:'Roboto Condensed',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(42px,7vw,72px);margin-bottom:15px;text-shadow:2px 2px 10px rgba(0,0,0,0.8);">
+                Carol Anderson
+            </h1>
+            <p
+                style="font-family:'Montserrat',sans-serif;font-size:20px;max-width:700px;margin:auto;line-height:1.6;color:#fff;text-shadow:1px 1px 4px rgba(0,0,0,0.8);">
+                RE/MAX Gateway | DRE# 01185988
+            </p>
+        </div>
+    </section>
+
+    <!-- 📖 Bio Section -->
+    <section id="about-bio">
+        <div class="bio-container">
+            <div class="bio-image">
+                <img src="https://larelocation.com/wp-content/uploads/2025/10/Carol-Anderson.webp"
+                    alt="Carol Anderson - RE/MAX Realtor">
+            </div>
+            <div class="bio-text">
+                <h2>Experience You Can <br><span>Trust</span></h2>
+                <div style="width:60px;height:4px;background:#e63946;margin-bottom:30px;"></div>
+                <p>
+                    For over 25 years, I have had the privilege of helping families, individuals, and investors navigate
+                    the dynamic real estate landscape of Los Angeles County. My journey began with a simple mission: to
+                    treat every client's move as if it were my own.
+                </p>
+                <p>
+                    As a top-producing agent with RE/MAX Gateway, I've built my reputation on integrity, market
+                    expertise, and an unwavering commitment to my clients' success. Whether you are buying your first
+                    home in Santa Clarita, selling a luxury estate in the Hollywood Hills, or relocating to the Antelope
+                    Valley, I bring a wealth of local knowledge and negotiation power to your corner.
+                </p>
+                <p>
+                    Real estate is more than transactions; it's about people, dreams, and new beginnings. I look forward
+                    to being a part of yours.
+                </p>
+                <div class="signature">- Carol Anderson</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 💎 Core Values -->
+    <section id="core-values">
+        <h2
+            style="font-family:'Roboto Condensed',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(30px,5vw,48px);color:#fff;">
+            Why Choose <span style="color:#e63946;">Carol?</span>
+        </h2>
+        <p style="color:#bbb;max-width:600px;margin:15px auto 0;font-size:18px;">Built on a foundation of excellence and
+            results.</p>
+
+        <div class="values-grid">
+            <div class="value-card">
+                <i class="fas fa-handshake value-icon"></i>
+                <h3>Integrity First</h3>
+                <p>Honest advice and transparent communication at every step of the process.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-chart-line value-icon"></i>
+                <h3>Market Mastery</h3>
+                <p>Deep insight into local trends, pricing strategies, and neighborhood nuances.</p>
+            </div>
+            <div class="value-card">
+                <i class="fas fa-gem value-icon"></i>
+                <h3>Luxury for All</h3>
+                <p>Delivering a premium, white-glove experience regardless of price point.</p>
+            </div>
+        </div>
+    </section>
+
+    </section>
+
+    <!-- ❓ FAQ Section -->
+    <section id="about-faq" style="background:#1a1a1a;padding:90px 25px;text-align:center;color:#fff;">
+        <div style="max-width:850px;margin:auto;">
+            <h2
+                style="font-family:'Roboto Condensed',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(30px,5vw,48px);color:#fff;margin-bottom:15px;">
+                About <span style="color:#e63946;">Carol</span>
+            </h2>
+            <div style="width:70px;height:4px;background:#e63946;margin:0 auto 50px;border-radius:2px;"></div>
+
+            <div class="faq-container">
+                <!-- Q1 -->
+                <div class="faq-item">
+                    <button class="faq-question">How long have you been in real estate?</button>
+                    <div class="faq-answer">
+                        <p>I have been a licensed Realtor® since 1993, bringing over 30 years of experience to every
+                            transaction in the Los Angeles market.</p>
+                    </div>
+                </div>
+                <!-- Q2 -->
+                <div class="faq-item">
+                    <button class="faq-question">Are you a solo agent or part of a team?</button>
+                    <div class="faq-answer">
+                        <p>I lead the dedicated L.A. Relocation team at RE/MAX Gateway, ensuring you have full support,
+                            resources, and availability throughout your journey.</p>
+                    </div>
+                </div>
+                <!-- Q3 -->
+                <div class="faq-item">
+                    <button class="faq-question">What awards have you won?</button>
+                    <div class="faq-answer">
+                        <p>I am honored to have received the RE/MAX Lifetime Achievement Award, Hall of Fame induction,
+                            and the Diamond Club Award, recognizing consistent top-tier performance.</p>
+                    </div>
+                </div>
+                <!-- Q4 -->
+                <div class="faq-item">
+                    <button class="faq-question">Do you work with investors?</button>
+                    <div class="faq-answer">
+                        <p>Yes, I have extensive experience working with real estate investors, from single-family
+                            rentals to multi-unit properties and 1031 exchanges.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ❤️ Final CTA (Reusing the stylistic component) -->
+    <section id="final-cta"
+        style="background:linear-gradient(to right,#111 10%,#000 60%);padding:110px 25px;text-align:left;color:#fff;position:relative;overflow:hidden;">
+        <div
+            style="max-width:1100px;margin:auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:50px;position:relative;z-index:2;">
+            <div style="flex:1 1 520px;min-width:320px;">
+                <h2
+                    style="font-family:'Roboto Condensed',sans-serif;font-weight:900;text-transform:uppercase;font-size:clamp(32px,5vw,54px);margin-bottom:25px;color:#fff;line-height:1.15;">
+                    Let's Discuss <br><span style="color:#e63946;">Your Vision</span>
+                </h2>
+                <p
+                    style="font-family:'Montserrat',sans-serif;font-size:19px;color:#e0e0e0;line-height:1.8;max-width:600px;margin:0 0 45px;">
+                    Your real estate goals deserve expert attention. Contact me today for a confidential consultation.
+                </p>
+                <div style="display:flex;flex-wrap:wrap;gap:20px;">
+                    <a href="tel:6614067568"
+                        style="background:#e63946;padding:17px 48px;color:#fff;text-decoration:none;font-family:'Montserrat',sans-serif;font-weight:700;text-transform:uppercase;border-radius:10px;letter-spacing:1px;transition:all .35s;box-shadow:0 8px 20px rgba(230,57,70,0.25);">
+                        Call Carol Direct
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div
+            style="position:absolute;bottom:-100px;left:50%;transform:translateX(-50%);width:550px;height:550px;background:radial-gradient(circle,rgba(230,57,70,0.3)0%,rgba(0,0,0,0)70%);filter:blur(70px);z-index:1;">
+        </div>
+    </section>
+
+    <!-- 🌍 GLOBAL FOOTER -->
+    <footer id="remaxFooter" itemscope itemtype="https://schema.org/RealEstateAgent">
+        <!-- 🎈 Balloon Canvas -->
+        <canvas id="remaxBalloonCanvas"></canvas>
+        <!-- 🌆 Footer Grid -->
+        <div
+            style="position:relative;z-index:2;max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:50px;justify-items:center;text-align:center;">
+            <!-- 🏠 Brand -->
+            <div style="position:relative;">
+                <h4 class="footer-brand-mobile">LA Relocation</h4>
+                <!-- ✨ Balloon with Shine -->
+                <div class="shine-wrap">
+                    <img src="https://larelocation.com/wp-content/uploads/2025/11/Remax-Balloon-Transparent.webp"
+                        alt="RE/MAX Balloon Logo - Los Angeles Real Estate"
+                        style="max-width:200px;width:100%;height:auto;margin-bottom:20px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.55);">
+                    <div class="shine-overlay"></div>
+                </div>
+                <p style="color:#bfbfbf;font-size:15px;line-height:1.7;margin-top:10px;" itemprop="description">
+                    <strong itemprop="name" style="color:#fff;">LA Relocation – Carol Anderson, Realtor®</strong><br>
+                    <span itemprop="department" style="color:#e63946;">RE/MAX Gateway</span><br>
+                    <span itemprop="slogan">Helping families buy and sell homes across Los Angeles County, the Santa
+                        Clarita Valley, and the Antelope Valley.</span>
+                </p>
+            </div>
+            <!-- 📍 Contact -->
+            <div>
+                <h3 style="text-transform:uppercase;font-size:18px;font-weight:700;margin-bottom:15px;color:#fff;">
+                    Contact Info</h3>
+                <p style="font-size:15px;line-height:1.8;color:#bfbfbf;">
+                    <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+                        <span itemprop="streetAddress">24273 Main St</span><br>
+                        <span itemprop="addressLocality">Newhall</span>, <span itemprop="addressRegion">CA</span> <span
+                            itemprop="postalCode">91321</span>
+                    </span><br>
+                    DRE# <span itemprop="identifier">01185988</span><br><br>
+                    📞 <a href="tel:+16614067568" style="color:#e63946;text-decoration:none;" itemprop="telephone">(661)
+                        406-7568</a><br>
+                    ✉️ <a href="mailto:carol@larelocation.com" style="color:#e63946;text-decoration:none;"
+                        itemprop="email">carol@larelocation.com</a><br>
+                    🌐 <a href="https://larelocation.com" style="color:#e63946;text-decoration:none;"
+                        itemprop="url">larelocation.com</a>
+                </p>
+            </div>
+            <!-- 🔗 Links -->
+            <div>
+                <h3 style="text-transform:uppercase;font-size:18px;font-weight:700;margin-bottom:15px;color:#fff;">Quick
+                    Links</h3>
+                <ul style="list-style:none;padding:0;margin:0;line-height:2;">
+                    <li><a href="/" style="color:#bcbcbc;text-decoration:none;">Home</a></li>
+                    <li><a href="/about/" style="color:#bcbcbc;text-decoration:none;">About Carol</a></li>
+                    <li><a href="/contact/" style="color:#bcbcbc;text-decoration:none;">Contact</a></li>
+                    <li><a href="https://larelocation.com/palmdale/"
+                            style="color:#bcbcbc;text-decoration:none;">Palmdale Homes</a></li>
+                    <li><a href="https://larelocation.com/santa-clarita/"
+                            style="color:#bcbcbc;text-decoration:none;">Santa Clarita Homes</a></li>
+                    <li><a href="https://larelocation.com/blog/" style="color:#bcbcbc;text-decoration:none;">Real Estate
+                            Insights</a></li>
+                </ul>
+            </div>
+            <!-- 🌐 Connect -->
+            <div>
+                <h3 style="text-transform:uppercase;font-size:18px;font-weight:700;margin-bottom:15px;color:#fff;">
+                    Connect</h3>
+                <div style="display:flex;gap:12px;justify-content:center;margin-bottom:25px;">
+                    <a href="https://facebook.com/LArelocation" target="_blank"
+                        style="background:#1b1b1b;width:42px;height:42px;border-radius:6px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.08);">
+                        <i class="fab fa-facebook-f" style="color:#fff;font-size:18px;"></i>
+                    </a>
+                    <a href="https://instagram.com/LArelocation" target="_blank"
+                        style="background:#1b1b1b;width:42px;height:42px;border-radius:6px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.08);">
+                        <i class="fab fa-instagram" style="color:#fff;font-size:18px;"></i>
+                    </a>
+                    <a href="https://g.page/r/CaRelocation" target="_blank"
+                        style="background:#1b1b1b;width:42px;height:42px;border-radius:6px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.08);">
+                        <i class="fab fa-google" style="color:#fff;font-size:18px;"></i>
+                    </a>
+                </div>
+                <a href="https://www.google.com/maps?daddr=24273+Main+St,+Newhall,+CA+91321" target="_blank"
+                    style="display:inline-block;background:#e63946;color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;font-size:14px;text-transform:uppercase;box-shadow:0 5px 15px rgba(230,57,70,0.25);transition:all .3s ease;">
+                    📍 Get Directions
+                </a>
+            </div>
+        </div>
+        <!-- Divider -->
+        <div
+            style="margin:60px auto 30px;height:1px;width:90%;background:rgba(255,255,255,0.08);position:relative;z-index:2;">
+        </div>
+        <!-- Bottom -->
+        <div style="text-align:center;font-size:14px;color:#999;line-height:1.8;position:relative;z-index:2;">
+            <p>© 2025 <strong style="color:#fff;">LA Relocation</strong> | Powered by <strong
+                    style="color:#e63946;">RE/MAX Gateway</strong><br>
+                Site by <a href="https://aipilots.site" style="color:#ccc;text-decoration:none;">AI Pilots</a> |
+                <a href="https://larelocation.com/privacy-policy/" style="color:#ccc;text-decoration:none;">Privacy
+                    Policy</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../js/scripts.js"></script>
+</body>
+
+</html>

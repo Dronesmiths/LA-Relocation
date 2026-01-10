@@ -83,19 +83,34 @@ nav a:hover {
     }
 }
 
-/* 🏙️ Hero Slider */
+/* 🌇 HERO WRAPPER */
 #laHeroSlider {
     width: 100%;
-    height: 100vh;
-    max-height: 950px;
+    height: 90vh;
+    max-height: 900px;
     position: relative;
     overflow: hidden;
-    background: #000;
-    margin: 0;
-    padding: 0;
 }
 
-/* 🖼️ Slides */
+@media(max-width: 1200px) {
+    #laHeroSlider {
+        height: 85vh;
+    }
+}
+
+@media(max-width: 768px) {
+    #laHeroSlider {
+        height: 75vh;
+    }
+}
+
+@media(max-width: 480px) {
+    #laHeroSlider {
+        height: 70vh;
+    }
+}
+
+/* 🖼️ BACKGROUND */
 .slide {
     position: absolute;
     inset: 0;
@@ -104,39 +119,32 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    opacity: 0;
-    transition: opacity 1.2s ease-in-out;
-}
-
-.slide.active {
-    opacity: 1;
-    z-index: 1;
 }
 
 .slide::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.88) 40%, rgba(0, 0, 0, 0.25) 100%);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85) 35%, rgba(0, 0, 0, 0.25) 100%);
     z-index: 1;
 }
 
-/* 💬 Slide Text */
 .slide-content {
-    max-width: 740px;
+    max-width: 720px;
     padding: 40px 60px;
     color: #fff;
     position: relative;
     z-index: 2;
-    animation: fadeInUp 1.5s ease both;
+    text-align: left;
+    animation: fadeInUp 1.4s ease both;
     margin-top: 60px;
-    /* Offset for header */
+    /* Header Offset */
 }
 
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(25px);
+        transform: translateY(20px);
     }
 
     to {
@@ -145,6 +153,7 @@ nav a:hover {
     }
 }
 
+/* 💬 TEXT */
 .slide-content h4 {
     font-size: 22px;
     font-family: 'Roboto Condensed', sans-serif;
@@ -152,14 +161,13 @@ nav a:hover {
     text-transform: uppercase;
     margin-bottom: 12px;
     color: #fff;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
-    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .slide-content h1 {
     font-size: clamp(40px, 6vw, 64px);
-    line-height: 1.05;
-    margin-bottom: 14px;
+    line-height: 1.1;
+    margin-bottom: 25px;
     font-family: 'Roboto Condensed', sans-serif;
     font-weight: 900;
     text-transform: uppercase;
@@ -167,25 +175,19 @@ nav a:hover {
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.75);
 }
 
-/* 🔴 Red Underline Accent */
-.hero-underline {
-    width: 100px;
-    height: 4px;
-    background: #e63946;
-    margin: 12px 0 26px;
-    border-radius: 2px;
+.highlight-red {
+    color: #e63946;
 }
 
-/* Slide Paragraph */
 .slide-content p {
     font-size: 18.5px;
     line-height: 1.8;
     margin-bottom: 35px;
     color: #f1f1f1;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Buttons */
+/* 🔘 BUTTONS */
 .cta-group {
     display: flex;
     flex-wrap: wrap;
@@ -209,7 +211,6 @@ nav a:hover {
 .slide-content a:hover {
     background: #ff4c5c;
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
 .slide-content a.secondary {
@@ -223,50 +224,10 @@ nav a:hover {
     color: #e63946;
 }
 
-/* Dots + Arrows */
-.slider-controls {
-    position: absolute;
-    bottom: 20px;
-    right: 25px;
-    display: flex;
-    gap: 10px;
-    z-index: 3;
-    align-items: center;
-}
-
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.6);
-    cursor: pointer;
-    transition: background .3s;
-}
-
-.dot.active {
-    background: #fff;
-}
-
-.arrow {
-    background: rgba(0, 0, 0, 0.45);
-    border: none;
-    color: #fff;
-    font-size: 22px;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 6px;
-    transition: background .3s;
-}
-
-.arrow:hover {
-    background: rgba(0, 0, 0, 0.75);
-}
-
-/* Responsive Hero */
+/* 📱 RESPONSIVE Slide */
 @media(max-width: 768px) {
     .slide-content {
-        padding: 35px 25px;
-        text-align: left;
+        padding: 30px 25px;
         margin-top: 80px;
     }
 
@@ -275,20 +236,12 @@ nav a:hover {
     }
 
     .slide-content h1 {
-        font-size: clamp(28px, 7vw, 40px);
+        font-size: clamp(30px, 7vw, 42px);
     }
 
     .slide-content p {
         font-size: 15.5px;
         margin-bottom: 24px;
-    }
-
-    .hero-underline {
-        margin: 8px 0 20px;
-    }
-
-    .cta-group {
-        justify-content: flex-start;
     }
 
     .slide-content a {
@@ -311,8 +264,29 @@ nav a:hover {
     }
 }
 
+/* 🎛 Dots (static aesthetic) */
+.slider-controls {
+    position: absolute;
+    bottom: 18px;
+    right: 28px;
+    display: flex;
+    gap: 10px;
+    z-index: 3;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.dot.active {
+    background: #fff;
+}
+
+
 /* 🏡 WHY CHOOSE LA RELOCATION */
-/* Layout */
 .relocation-flex {
     max-width: 1150px;
     margin: auto;
@@ -323,13 +297,12 @@ nav a:hover {
     flex-wrap: nowrap;
 }
 
-/* Text Column */
 .relocation-text {
     flex: 1 1 480px;
     min-width: 320px;
     text-align: left;
-    z-index: 2;
     position: relative;
+    z-index: 2;
 }
 
 .relocation-title {
@@ -338,9 +311,10 @@ nav a:hover {
     text-transform: uppercase;
     color: #fff;
     letter-spacing: .5px;
-    line-height: 1.15;
-    font-size: clamp(28px, 5vw, 46px);
-    margin-bottom: 20px;
+    line-height: 1.1;
+    font-size: clamp(30px, 5vw, 48px);
+    margin-top: -20px !important;
+    margin-bottom: 10px;
 }
 
 .relocation-title .t-trusted {
@@ -352,42 +326,24 @@ nav a:hover {
     height: 4px;
     background: #e63946;
     border-radius: 2px;
-    margin: 18px 0 28px;
+    margin: 10px 0 20px;
 }
 
 .relocation-text p {
     font-size: 19px;
-    line-height: 1.9;
+    line-height: 1.8;
     color: #e0e0e0;
-    margin-bottom: 26px;
+    margin-bottom: 24px;
     max-width: 540px;
 }
 
-.cta-btn {
-    background: #e63946;
-    color: #fff;
-    padding: 15px 44px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    border-radius: 10px;
-    text-decoration: none;
-    letter-spacing: 1px;
-    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.25);
-    transition: all .35s;
-}
-
-.cta-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(230, 57, 70, 0.4);
-    background: #ff4c5c;
-}
-
-/* Image Column */
+/* 📸 Image Column */
 .photo-frame {
     flex: 1 1 380px;
     max-width: 480px;
     line-height: 0;
+    margin: 0 auto -20px !important;
+    padding-bottom: 0 !important;
 }
 
 .carol-photo {
@@ -396,54 +352,42 @@ nav a:hover {
     height: auto;
     border-radius: 14px;
     filter: brightness(1.05);
+    transition: all .3s ease;
+    object-fit: cover;
+    margin-bottom: -10px !important;
 }
 
-/* Responsive Why Choose */
-@media (max-width: 992px) {
-    #why-relocation {
-        padding: 80px 20px;
-    }
-
-    .relocation-flex {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    .photo-frame {
-        max-width: 420px;
-    }
-}
-
+/* 📱 Responsive Adjustments */
 @media (max-width: 768px) {
     #why-relocation {
-        padding: 55px 18px 20px;
+        padding: 50px 10px 30px;
         text-align: center;
     }
 
     .relocation-flex {
         flex-direction: column-reverse;
-        gap: 10px;
+        gap: 0;
     }
 
     .photo-frame {
-        max-width: 340px;
-        margin: 0 auto;
+        max-width: 440px;
+        margin: 0 auto -20px !important;
     }
 
     .carol-photo {
-        max-width: 94%;
         border-radius: 14px;
+        margin-bottom: -15px !important;
     }
 
     .relocation-title {
         text-align: center;
-        margin-top: 6px !important;
-        margin-bottom: 10px;
-        font-size: clamp(24px, 6vw, 36px);
+        margin-top: -30px !important;
+        margin-bottom: 5px;
+        font-size: clamp(26px, 6vw, 36px);
     }
 
     .relocation-divider {
-        margin: 10px auto 20px;
+        margin: 6px auto 12px;
     }
 
     .relocation-text {
@@ -453,51 +397,40 @@ nav a:hover {
     .relocation-text p {
         font-size: 17px;
         line-height: 1.8;
-        margin-bottom: 16px;
+        margin-bottom: 14px;
         color: #ddd;
-    }
-
-    .cta-btn {
-        margin-top: 10px;
-        font-size: 14px;
-        padding: 13px 36px;
     }
 }
 
+/* 📱 Small Phones */
 @media (max-width: 480px) {
     #why-relocation {
-        padding: 40px 15px 18px;
+        padding: 30px 8px 15px;
     }
 
     .photo-frame {
-        max-width: 260px;
-        margin: 0 auto;
+        max-width: 360px;
+        margin: 0 auto -25px !important;
     }
 
     .carol-photo {
         border-radius: 12px;
-        max-width: 95%;
+        margin-bottom: -25px !important;
     }
 
     .relocation-title {
-        margin-top: 0 !important;
-        margin-bottom: 6px;
-        font-size: clamp(22px, 7vw, 28px);
+        margin-top: -30px !important;
+        font-size: clamp(24px, 7vw, 30px);
     }
 
     .relocation-text p {
         font-size: 16.5px;
         line-height: 1.8;
     }
-
-    .cta-btn {
-        padding: 12px 32px;
-        font-size: 13px;
-    }
 }
 
 
-/* 🧭 FEATURE GRID SECTION */
+/* 🏙️ FEATURE GRID – LOS ANGELES HOMES EDITION */
 .grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -523,7 +456,7 @@ nav a:hover {
     filter: brightness(1.05);
 }
 
-/* Overlays */
+/* 🎭 OVERLAYS */
 .overlay {
     position: absolute;
     inset: 0;
@@ -539,19 +472,18 @@ nav a:hover {
     background: rgba(230, 57, 70, 0.6);
 }
 
-/* Text & Border Effect */
+/* ✨ TEXT & BORDER EFFECT */
 .grid-text {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(18px, 2.8vw, 22px);
+    font-size: clamp(18px, 2.8vw, 24px);
     font-weight: 800;
     color: #fff;
     text-transform: uppercase;
     letter-spacing: 1px;
-    display: inline-block;
     text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
 }
 
@@ -577,10 +509,24 @@ nav a:hover {
     opacity: 1;
 }
 
-/* Grid Responsive */
+/* 📱 MOBILE RESPONSIVE Grid */
+@media(max-width: 1024px) {
+    #feature-grid {
+        padding: 80px 20px;
+    }
+
+    #feature-grid h2 {
+        font-size: clamp(32px, 6vw, 50px);
+    }
+}
+
 @media(max-width: 768px) {
     #feature-grid {
-        padding: 80px 15px;
+        padding: 70px 15px;
+    }
+
+    #feature-grid h2 {
+        font-size: clamp(28px, 7vw, 42px);
     }
 
     .grid-container {
@@ -588,26 +534,104 @@ nav a:hover {
     }
 
     .grid-text span {
-        padding: 15px 32px;
+        padding: 14px 28px;
     }
 }
 
 @media(max-width: 480px) {
     #feature-grid {
-        padding: 70px 12px;
+        padding: 60px 12px;
+    }
+
+    #feature-grid h2 {
+        font-size: clamp(26px, 8vw, 38px);
     }
 
     .grid-container {
-        gap: 16px;
+        gap: 14px;
     }
 
     .grid-text {
-        font-size: 16px;
+        font-size: 15px;
     }
 }
 
 
-/* 🌆 WHY WORK WITH CAROL Statistics */
+/* 💎 LUXURY SLIDER */
+/* ✨ Slider Base */
+.slider-wrapper {
+    position: relative;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.slider-track {
+    display: flex;
+    align-items: stretch;
+    gap: 25px;
+    width: max-content;
+    animation: slideTrack 20s linear infinite;
+}
+
+.slider-wrapper:hover .slider-track {
+    animation-play-state: paused;
+}
+
+/* 🧊 Card Style */
+.lux-card {
+    flex: 0 0 28%;
+    max-width: 350px;
+    min-height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    padding: 30px 20px;
+    backdrop-filter: blur(8px);
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+.lux-card:hover {
+    border-color: #e63946;
+    transform: translateY(-6px);
+    box-shadow: 0 0 30px rgba(230, 57, 70, 0.25);
+}
+
+.lux-card h4 {
+    color: #fff;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+}
+
+.lux-card p {
+    color: #bbb;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: 260px;
+    margin: 0 auto;
+}
+
+/* 🎞️ Animation */
+@keyframes slideTrack {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* 🌇 WHY WORK WITH CAROL Statistics */
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -826,175 +850,49 @@ nav a:hover {
 }
 
 
-/* 🏠 FEATURED LISTINGS / EXPLORE LA HOMES */
-.hero-image-wrapper {
-    width: 100%;
-    max-width: 820px;
-    margin: 40px auto;
-    aspect-ratio: 16/9;
-    border-radius: 16px;
-    overflow: hidden;
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
-    transition: transform .5s ease, box-shadow .5s ease;
+/* ❤️ FINAL CALL TO ACTION */
+#final-cta a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(230, 57, 70, 0.45);
+    background: #ff4c5c;
+    border-color: #ff4c5c;
 }
 
-.hero-image-wrapper img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: transform .5s ease;
-}
-
-.hero-image-wrapper:hover img {
-    transform: scale(1.03);
-}
-
-.hero-image-wrapper:hover {
-    box-shadow: 0 15px 45px rgba(255, 255, 255, 0.25);
-}
-
-.listing-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 35px;
-    margin-top: 60px;
-}
-
-/* Cards */
-.listing-card {
-    flex: 1 1 320px;
-    background: #111;
-    border-radius: 14px;
-    padding: 40px 30px;
-    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
-    transition: all .35s ease;
-    position: relative;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeUp .8s ease forwards;
-}
-
-.listing-card:nth-child(1) {
-    animation-delay: .2s;
-}
-
-.listing-card:nth-child(2) {
-    animation-delay: .4s;
-}
-
-.listing-card:nth-child(3) {
-    animation-delay: .6s;
-}
-
-.listing-card::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.08), rgba(230, 57, 70, 0.05));
-    opacity: 1;
-    transition: opacity .4s ease;
-    border-radius: inherit;
-    z-index: 1;
-}
-
-.listing-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 14px 28px rgba(255, 255, 255, 0.1);
-    border-color: rgba(230, 57, 70, 0.4);
-}
-
-.listing-content {
-    position: relative;
-    z-index: 2;
-    text-align: left;
-}
-
-.listing-content h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 23px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 15px;
-}
-
-.listing-content p {
-    font-size: 17px;
-    line-height: 1.75;
-    color: #ccc;
-    margin-bottom: 22px;
-}
-
-.listing-content a {
-    display: inline-block;
-    background: #e63946;
-    color: #fff;
-    padding: 12px 26px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .5px;
-    transition: all .3s ease;
-}
-
-.listing-content a:hover {
-    background: #fff;
-    color: #e63946;
-    box-shadow: 0 6px 14px rgba(255, 255, 255, 0.3);
-    transform: scale(1.05);
-}
-
-@keyframes fadeUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
+/* 📱 Responsive Layout */
+@media (max-width: 900px) {
+    #final-cta {
+        text-align: center;
+        padding: 80px 20px;
+        background: linear-gradient(to bottom, #111 10%, #000 90%);
     }
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    #final-cta img {
+        max-width: 300px !important;
+        margin: 0 auto;
+    }
+
+    #final-cta h2 {
+        font-size: clamp(28px, 7vw, 42px);
+    }
+
+    #final-cta p {
+        font-size: 17px;
+        margin-bottom: 30px;
+    }
+
+    #final-cta a {
+        padding: 14px 38px;
+        font-size: 14px;
     }
 }
 
-@media(max-width: 768px) {
-    .listing-card {
-        padding: 32px 24px;
+@media (max-width: 480px) {
+    #final-cta {
+        padding: 60px 15px;
     }
 
-    .listing-content h3 {
-        font-size: 21px;
-    }
-
-    .listing-content p {
-        font-size: 16px;
-    }
-}
-
-@media(max-width: 480px) {
-    .listing-grid {
-        gap: 25px;
-    }
-
-    .listing-card {
-        padding: 26px 20px;
-    }
-
-    .listing-content h3 {
-        font-size: 20px;
-    }
-
-    .listing-content p {
-        font-size: 15.5px;
-    }
-
-    .listing-content a {
-        padding: 10px 22px;
+    #final-cta a {
+        padding: 13px 32px;
         font-size: 13px;
     }
 }
