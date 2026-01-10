@@ -4,42 +4,21 @@ Options -Indexes
 # Default charset
 AddDefaultCharset UTF-8
 
-# Security headers
+# Security headers (wrapped with IfModule to avoid errors if modules missing)
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
-  Header set Referrer-Policy "no-referrer-when-downgrade"
   Header set X-XSS-Protection "1; mode=block"
-  <If "%{HTTPS} == 'on'">
-    Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
-  </If>
 </IfModule>
 
-# Rewrite rules to serve site from the subdirectory
 RewriteEngine On
-RewriteBase /website_d6ddc397/
+RewriteBase /
 
-# Redirect bare domain root to the subfolder
-RewriteCond %{REQUEST_URI} ^/$
-RewriteRule ^$ /website_d6ddc397/ [R=302,L]
-
-# If requested file or directory exists, serve it
+# Standard routing: if file/dir exists, serve it
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Fallback: route other requests to the subfolder index (useful for pretty URLs / SPA)
-RewriteRule . /website_d6ddc397/index.html [L]
-
-# Basic caching for static assets
-<IfModule mod_expires.c>
-  ExpiresActive On
-  ExpiresByType text/css "access plus 1 week"
-  ExpiresByType text/javascript "access plus 1 week"
-  ExpiresByType application/javascript "access plus 1 week"
-  ExpiresByType image/jpeg "access plus 1 month"
-  ExpiresByType image/png "access plus 1 month"
-  ExpiresByType image/webp "access plus 1 month"
-  ExpiresByType image/svg+xml "access plus 1 month"
-  ExpiresByType image/x-icon "access plus 1 month"
-</IfModule>
+# Optional: If you are using clean URLs (like /inglewood instead of /inglewood.html), uncomment below:
+# RewriteCond %{REQUEST_FILENAME}.html -f
+# RewriteRule ^(.*)$ $1.html [L]

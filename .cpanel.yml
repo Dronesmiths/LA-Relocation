@@ -5,14 +5,15 @@ deployment:
     - run: git reset --hard origin/main || git reset --hard HEAD || true
     - run: git clean -fd || true
 
-    # Deploy target (only this folder)
-    - run: export TARGET_SUB="/home1/spreaeb3/public_html/website_d6ddc397"
-    - run: mkdir -p "$TARGET_SUB"
-
-    # Mirror repo into the site-specific folder (exclude .git and this deploy file)
-    - run: rsync -a --delete --exclude='.git' --exclude='.cpanel.yml' . "$TARGET_SUB/"
-
-    # Permissions and ownership for cPanel user 'spreaeb3'
-    - run: find "$TARGET_SUB" -type d -exec chmod 755 {} \;
-    - run: find "$TARGET_SUB" -type f -exec chmod 644 {} \;
-    - run: chown -R "spreaeb3":"spreaeb3" "$TARGET_SUB"
+    - export DEPLOYPATH=/home1/spreaeb3/public_html
+    # Deploy files to main public_html. 
+    # NOTE: We use rsync -a (archive) which is safer than cp. 
+    # excluding .git and config files.
+    - run: /usr/bin/rsync -a --exclude='.git' --exclude='.cpanel.yml' . $DEPLOYPATH/
+    
+    # Fix permissions for the main folder contents
+    - run: find $DEPLOYPATH -maxdepth 2 -type d -exec chmod 755 {} \;
+    - run: find $DEPLOYPATH -maxdepth 2 -type f -exec chmod 644 {} \;
+    
+    # Ensure ownership is correct
+    - run: chown -R spreaeb3:spreaeb3 $DEPLOYPATH
