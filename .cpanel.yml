@@ -1,15 +1,18 @@
 deployment:
   tasks:
-    - run: export TARGET_SITE="/home1/spreaeb3/public_html"
+    # Ensure server repo has no uncommitted changes that would block pulls
+    - run: git fetch --all || true
+    - run: git reset --hard origin/main || git reset --hard HEAD || true
+    - run: git clean -fd || true
+
+    # Deploy target (only this folder)
     - run: export TARGET_SUB="/home1/spreaeb3/public_html/website_d6ddc397"
-    - run: mkdir -p "$TARGET_SITE" "$TARGET_SUB"
-    # Sync full repo into the site-specific folder (mirror)
-    - run: rsync -a --delete --exclude='.git' --exclude='.cpanel.yml' ./ "$TARGET_SUB/"
-    # Sync the 'inglewood' subfolder into the main public_html root so the main site is updated
-    - run: rsync -a --delete --exclude='.git' --exclude='.cpanel.yml' ./inglewood/ "$TARGET_SITE/"
-    # Ensure sane permissions and ownership for cPanel user 'spreaeb3'
+    - run: mkdir -p "$TARGET_SUB"
+
+    # Mirror repo into the site-specific folder (exclude .git and this deploy file)
+    - run: rsync -a --delete --exclude='.git' --exclude='.cpanel.yml' . "$TARGET_SUB/"
+
+    # Permissions and ownership for cPanel user 'spreaeb3'
     - run: find "$TARGET_SUB" -type d -exec chmod 755 {} \;
     - run: find "$TARGET_SUB" -type f -exec chmod 644 {} \;
-    - run: find "$TARGET_SITE" -type d -exec chmod 755 {} \;
-    - run: find "$TARGET_SITE" -type f -exec chmod 644 {} \;
-    - run: chown -R "spreaeb3":"spreaeb3" "$TARGET_SUB" "$TARGET_SITE"
+    - run: chown -R "spreaeb3":"spreaeb3" "$TARGET_SUB"
