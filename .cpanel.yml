@@ -1,0 +1,7 @@
+deployment:
+  tasks:
+    - run: mkdir -p "$HOME/public_html/website_d6ddc397"
+    - run: rsync -a --delete --exclude='.git' --exclude='.cpanel.yml' ./ "$HOME/public_html/website_d6ddc397/"
+    - run: find "$HOME/public_html/website_d6ddc397" -type d -exec chmod 755 {} \;
+    - run: find "$HOME/public_html/website_d6ddc397" -type f -exec chmod 644 {} \;
+    - run: chown -R "$USER":"$USER" "$HOME/public_html/website_d6ddc397"
