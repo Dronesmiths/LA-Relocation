@@ -1,8 +1,15 @@
 deployment:
   tasks:
-    - run: export DEPLOYPATH="/home1/spreaeb3/public_html/website_d6ddc397"
-    - run: mkdir -p "$DEPLOYPATH"
-    - run: rsync -a --delete --exclude='.git' --exclude='.cpanel.yml' . "$DEPLOYPATH/"
-    - run: find "$DEPLOYPATH" -type d -exec chmod 755 {} \;
-    - run: find "$DEPLOYPATH" -type f -exec chmod 644 {} \;
-    - run: chown -R "spreaeb3":"spreaeb3" "$DEPLOYPATH"
+    - run: export TARGET_SITE="/home1/spreaeb3/public_html"
+    - run: export TARGET_SUB="/home1/spreaeb3/public_html/website_d6ddc397"
+    - run: mkdir -p "$TARGET_SITE" "$TARGET_SUB"
+    # Sync full repo into the site-specific folder (mirror)
+    - run: rsync -a --delete --exclude='.git' --exclude='.cpanel.yml' ./ "$TARGET_SUB/"
+    # Sync the 'inglewood' subfolder into the main public_html root so the main site is updated
+    - run: rsync -a --delete --exclude='.git' --exclude='.cpanel.yml' ./inglewood/ "$TARGET_SITE/"
+    # Ensure sane permissions and ownership for cPanel user 'spreaeb3'
+    - run: find "$TARGET_SUB" -type d -exec chmod 755 {} \;
+    - run: find "$TARGET_SUB" -type f -exec chmod 644 {} \;
+    - run: find "$TARGET_SITE" -type d -exec chmod 755 {} \;
+    - run: find "$TARGET_SITE" -type f -exec chmod 644 {} \;
+    - run: chown -R "spreaeb3":"spreaeb3" "$TARGET_SUB" "$TARGET_SITE"
