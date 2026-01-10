@@ -1,19 +1,8 @@
 deployment:
   tasks:
-    # Ensure server repo has no uncommitted changes that would block pulls
-    - run: git fetch --all || true
-    - run: git reset --hard origin/main || git reset --hard HEAD || true
-    - run: git clean -fd || true
-
-    - export DEPLOYPATH=/home1/spreaeb3/public_html
-    # Deploy files to main public_html. 
-    # NOTE: We use rsync -a (archive) which is safer than cp. 
-    # excluding .git and config files.
-    - run: /usr/bin/rsync -a --exclude='.git' --exclude='.cpanel.yml' . $DEPLOYPATH/
+    # Use explicit paths because variables ($DEPLOYPATH) do not persist between lines in cPanel tasks
+    - /usr/bin/rsync -a --delete --exclude='.git' --exclude='.cpanel.yml' --exclude='.gitignore' ./ /home1/spreaeb3/public_html/
     
-    # Fix permissions for the main folder contents
-    - run: find $DEPLOYPATH -maxdepth 2 -type d -exec chmod 755 {} \;
-    - run: find $DEPLOYPATH -maxdepth 2 -type f -exec chmod 644 {} \;
-    
-    # Ensure ownership is correct
-    - run: chown -R spreaeb3:spreaeb3 $DEPLOYPATH
+    # Set permissions
+    - /usr/bin/find /home1/spreaeb3/public_html/ -type d -exec chmod 755 {} \;
+    - /usr/bin/find /home1/spreaeb3/public_html/ -type f -exec chmod 644 {} \;

@@ -4,7 +4,7 @@ Options -Indexes
 # Default charset
 AddDefaultCharset UTF-8
 
-# Security headers (wrapped with IfModule to avoid errors if modules missing)
+# Security headers
 <IfModule mod_headers.c>
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
@@ -19,6 +19,7 @@ RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
 
-# Optional: If you are using clean URLs (like /inglewood instead of /inglewood.html), uncomment below:
-# RewriteCond %{REQUEST_FILENAME}.html -f
-# RewriteRule ^(.*)$ $1.html [L]
+# Clean URLs fallback
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
