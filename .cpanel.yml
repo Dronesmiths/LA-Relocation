@@ -1,7 +1,15 @@
 deployment:
   tasks:
-    - run: mkdir -p "$HOME/public_html/website_d6ddc397"
-    - run: rsync -a --delete --exclude='.git' --exclude='.cpanel.yml' ./ "$HOME/public_html/website_d6ddc397/"
-    - run: find "$HOME/public_html/website_d6ddc397" -type d -exec chmod 755 {} \;
-    - run: find "$HOME/public_html/website_d6ddc397" -type f -exec chmod 644 {} \;
-    - run: chown -R "$USER":"$USER" "$HOME/public_html/website_d6ddc397"
+    - run: mkdir -p "/home1/spreaeb3/public_html/website_d6ddc397"
+    - run: mkdir -p "/home1/spreaeb3/public_html"
+    # Sync full repo into the site-specific folder
+    - run: rsync -a --delete --exclude='.git' --exclude='.cpanel.yml' ./ "/home1/spreaeb3/public_html/website_d6ddc397/"
+    # Optional: mirror repo into the main public_html (uncomment if you want the repo root to be the site root)
+    - run: rsync -a --delete --exclude='.git' --exclude='.cpanel.yml' ./ "/home1/spreaeb3/public_html/"
+    # Ensure sane permissions and ownership for cPanel user 'spreaeb3'
+    - run: find "/home1/spreaeb3/public_html/website_d6ddc397" -type d -exec chmod 755 {} \;
+    - run: find "/home1/spreaeb3/public_html/website_d6ddc397" -type f -exec chmod 644 {} \;
+    - run: find "/home1/spreaeb3/public_html" -type d -exec chmod 755 {} \;
+    - run: find "/home1/spreaeb3/public_html" -type f -exec chmod 644 {} \;
+    - run: chown -R "spreaeb3":"spreaeb3" "/home1/spreaeb3/public_html/website_d6ddc397"
+    - run: chown -R "spreaeb3":"spreaeb3" "/home1/spreaeb3/public_html"
