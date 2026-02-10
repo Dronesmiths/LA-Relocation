@@ -31,8 +31,8 @@
         "@id": "https://larelocation.com/#organization",
         "name": "LA Relocation - Carol Anderson",
         "url": "https://larelocation.com",
-        "logo": "/images/Remax-Balloon-Transparent.webp",
-        "image": "/images/Carol-Anderson.webp",
+        "logo": "https://larelocation.com/wp-content/uploads/2025/11/Remax-Balloon-Transparent.webp",
+        "image": "https://larelocation.com/wp-content/uploads/2025/10/Carol-Anderson.webp",
         "description": "Top-rated RE/MAX Realtor serving Los Angeles, Santa Clarita, and Antelope Valley. Expert guidance for buying and selling homes.",
         "telephone": "+16614067568",
         "email": "carol@larelocation.com",
@@ -104,7 +104,7 @@
 
     <!-- 🌇 Slide — Main Los Angeles Focus -->
     <div class="slide active"
-      style="background-image:url('/images/LaRelocation-home-for-sale-front-view-los-angeles.webp');">
+      style="background-image:url('https://larelocation.com/wp-content/uploads/2025/10/LaRelocation-home-for-sale-front-view-los-angeles.webp');">
       <div class="slide-content">
         <h4>Your Next Chapter Starts Here</h4>
         <h1><span class="highlight-red">Los Angeles</span> Homes for Sale</h1>
@@ -152,7 +152,7 @@
 
       <!-- 🖼️ Image Column -->
       <div class="photo-frame">
-        <img src="/images/LaRelocation-Home-for-sale-.webp"
+        <img src="https://larelocation.com/wp-content/uploads/2025/10/LaRelocation-Home-for-sale-.webp"
           alt="Los Angeles Homes for Sale - Carol Anderson RE/MAX" class="carol-photo" loading="lazy" />
       </div>
 
@@ -209,42 +209,42 @@
 
         <!-- 1️⃣ HOLLYWOOD HILLS -->
         <div class="grid-item red"
-          style="background-image:url('/images/Hollywood-Hills.webp');">
+          style="background-image:url('https://larelocation.com/wp-content/uploads/2025/10/Hollywood-Hills.webp');">
           <div class="overlay red"></div>
           <div class="grid-text"><span>HOLLYWOOD HILLS</span></div>
         </div>
 
         <!-- 2️⃣ DOWNTOWN CONDOS -->
         <div class="grid-item"
-          style="background-image:url('/images/Downtown-Condos.webp');">
+          style="background-image:url('https://larelocation.com/wp-content/uploads/2025/10/Downtown-Condos.webp');">
           <div class="overlay"></div>
           <div class="grid-text"><span>DOWNTOWN CONDOS</span></div>
         </div>
 
         <!-- 3️⃣ LUXURY HOMES -->
         <div class="grid-item red"
-          style="background-image:url('/images/Luxury-Homes-in-Los-Angeles.webp');">
+          style="background-image:url('https://larelocation.com/wp-content/uploads/2025/10/Luxury-Homes-in-Los-Angeles.webp');">
           <div class="overlay red"></div>
           <div class="grid-text"><span>LUXURY HOMES</span></div>
         </div>
 
         <!-- 4️⃣ COASTAL HOMES -->
         <div class="grid-item"
-          style="background-image:url('/images/Coastal-Homes-in-Los-Angeles.webp');">
+          style="background-image:url('https://larelocation.com/wp-content/uploads/2025/10/Coastal-Homes-in-Los-Angeles.webp');">
           <div class="overlay"></div>
           <div class="grid-text"><span>COASTAL HOMES</span></div>
         </div>
 
         <!-- 5️⃣ VALLEY HOMES -->
         <div class="grid-item red"
-          style="background-image:url('/images/Valley-Homes-in-Los-Angeles.webp');">
+          style="background-image:url('https://larelocation.com/wp-content/uploads/2025/10/Valley-Homes-in-Los-Angeles.webp');">
           <div class="overlay red"></div>
           <div class="grid-text"><span>VALLEY HOMES</span></div>
         </div>
 
         <!-- 6️⃣ NEW DEVELOPMENTS -->
         <div class="grid-item"
-          style="background-image:url('/images/Residential-Neighborhood.webp');">
+          style="background-image:url('https://larelocation.com/wp-content/uploads/2025/10/Residential-Neighborhood.webp');">
           <div class="overlay"></div>
           <div class="grid-text"><span>NEW DEVELOPMENTS</span></div>
         </div>
@@ -323,14 +323,14 @@
 
     <!-- Background Overlay -->
     <div style="position:absolute;inset:0;
-              background:url('/images/Los-Angeles-City.webp') center/cover no-repeat;
+              background:url('https://larelocation.com/wp-content/uploads/2025/10/Los-Angeles-City.webp') center/cover no-repeat;
               opacity:0.08;filter:blur(6px);z-index:1;"></div>
   </section>
 
   <!-- 🌆 WHY WORK WITH CAROL -->
   <section id="why-carol" style="position:relative;padding:100px 20px;text-align:center;overflow:hidden;color:#fff;">
     <!-- 🏙️ Background Image -->
-    <img src="/images/LaRelocation-Home-for-sale-.webp"
+    <img src="https://larelocation.com/wp-content/uploads/2025/10/LaRelocation-Home-for-sale-.webp"
       alt="Los Angeles Skyline at Sunset"
       style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;">
     <!-- ✨ Gradient Overlay -->
@@ -382,39 +382,39 @@
         <div class="awards-track">
           <!-- 🏅 Set A -->
           <div class="award-card"><img
-              src="/images/Diamond-award-Remax-1.webp"
+              src="https://larelocation.com/wp-content/uploads/2025/10/Diamond-award-Remax-1.webp"
               alt="RE/MAX Diamond Award - Carol Anderson"></div>
           <div class="award-card"><img
-              src="/images/Minimalist-Titan-Logo-Design.webp"
+              src="https://larelocation.com/wp-content/uploads/2025/10/Minimalist-Titan-Logo-Design.webp"
               alt="RE/MAX Titan Award - Carol Anderson"></div>
           <div class="award-card"><img
-              src="/images/Lifetime-Achievvment-Remax.webp"
+              src="https://larelocation.com/wp-content/uploads/2025/10/Lifetime-Achievvment-Remax.webp"
               alt="RE/MAX Lifetime Achievement Award - Carol Anderson"></div>
           <div class="award-card"><img
-              src="/images/Circle-of-Legends-Remax.png"
+              src="https://larelocation.com/wp-content/uploads/2025/10/Circle-of-Legends-Remax.png"
               alt="RE/MAX Circle of Legends Award - Carol Anderson"></div>
-          <div class="award-card"><img src="/images/Hall-of-Fame-Remax.webp"
+          <div class="award-card"><img src="https://larelocation.com/wp-content/uploads/2025/10/Hall-of-Fame-Remax.webp"
               alt="RE/MAX Hall of Fame Award - Carol Anderson"></div>
           <div class="award-card"><img
-              src="/images/Chairmans-Award-Remax-Black-Background.webp"
+              src="https://larelocation.com/wp-content/uploads/2025/10/Chairmans-Award-Remax-Black-Background.webp"
               alt="RE/MAX Chairman's Award - Carol Anderson"></div>
           <!-- 🌀 Set B (Loop Continuation) -->
           <div class="award-card"><img
-              src="/images/Diamond-award-Remax-1.webp"
+              src="https://larelocation.com/wp-content/uploads/2025/10/Diamond-award-Remax-1.webp"
               alt="RE/MAX Diamond Award - Carol Anderson"></div>
           <div class="award-card"><img
-              src="/images/Minimalist-Titan-Logo-Design.webp"
+              src="https://larelocation.com/wp-content/uploads/2025/10/Minimalist-Titan-Logo-Design.webp"
               alt="RE/MAX Titan Award - Carol Anderson"></div>
           <div class="award-card"><img
-              src="/images/Lifetime-Achievvment-Remax.webp"
+              src="https://larelocation.com/wp-content/uploads/2025/10/Lifetime-Achievvment-Remax.webp"
               alt="RE/MAX Lifetime Achievement Award - Carol Anderson"></div>
           <div class="award-card"><img
-              src="/images/Circle-of-Legends-Remax.png"
+              src="https://larelocation.com/wp-content/uploads/2025/10/Circle-of-Legends-Remax.png"
               alt="RE/MAX Circle of Legends Award - Carol Anderson"></div>
-          <div class="award-card"><img src="/images/Hall-of-Fame-Remax.webp"
+          <div class="award-card"><img src="https://larelocation.com/wp-content/uploads/2025/10/Hall-of-Fame-Remax.webp"
               alt="RE/MAX Hall of Fame Award - Carol Anderson"></div>
           <div class="award-card"><img
-              src="/images/Chairmans-Award-Remax-Black-Background.webp"
+              src="https://larelocation.com/wp-content/uploads/2025/10/Chairmans-Award-Remax-Black-Background.webp"
               alt="RE/MAX Chairman's Award - Carol Anderson"></div>
         </div>
       </div>
@@ -509,7 +509,7 @@
 
       <!-- 📸 Carol Anderson Photo -->
       <div style="flex:1 1 400px;display:flex;justify-content:center;">
-        <img src="/images/Carol-Anderson.webp"
+        <img src="https://larelocation.com/wp-content/uploads/2025/10/Carol-Anderson.webp"
           alt="Carol Anderson Realtor Los Angeles"
           style="width:100%;max-width:420px;border-radius:16px;box-shadow:0 15px 35px rgba(0,0,0,0.6);object-fit:cover;">
       </div>
@@ -536,7 +536,7 @@
         <h4 class="footer-brand-mobile">LA Relocation</h4>
         <!-- ✨ Balloon with Shine -->
         <div class="shine-wrap">
-          <img src="/images/Remax-Balloon-Transparent.webp"
+          <img src="https://larelocation.com/wp-content/uploads/2025/11/Remax-Balloon-Transparent.webp"
             alt="RE/MAX Balloon Logo - Los Angeles Real Estate"
             style="max-width:200px;width:100%;height:auto;margin-bottom:20px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,0.55);">
           <div class="shine-overlay"></div>
@@ -561,8 +561,7 @@
           DRE# <span itemprop="identifier">01185988</span><br><br>
           📞 <a href="tel:+16614067568" style="color:#e63946;text-decoration:none;" itemprop="telephone">(661)
             406-7568</a><br>
-          ✉️ <a href="mailto:carol@larelocation.com" style="color:#e63946;text-decoration:none;"
-            itemprop="email">carol@larelocation.com</a><br>
+          ✉️ <a href="/cdn-cgi/l/email-protection#7a191b0815163a161b081f1615191b0e13151454191517" style="color:#e63946;text-decoration:none;" itemprop="email"><span class="__cf_email__" data-cfemail="b4d7d5c6dbd8f4d8d5c6d1d8dbd7d5c0dddbda9ad7dbd9">[email&#160;protected]</span></a><br>
           🌐 <a href="https://larelocation.com" style="color:#e63946;text-decoration:none;"
             itemprop="url">larelocation.com</a>
         </p>
@@ -623,7 +622,8 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="js/scripts.js"></script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/scripts.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"version":"2024.11.0","token":"a2232df896684475b1aea5eba9f6bf3b","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
 </body>
 
 </html>

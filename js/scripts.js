@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const ctx = canvas.getContext('2d');
     const dpr = window.devicePixelRatio || 1;
     const img = new Image();
-    img.src = "https://larelocation.com/wp-content/uploads/2025/11/Remax-Balloon-Transparent.webp";
+    img.src = "/images/Remax-Balloon-Transparent.webp";
     let width, height, balloons = [];
     const numBalloons = 6;
 
