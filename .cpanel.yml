@@ -1,8 +1,0 @@
-deployment:
-  tasks:
-    # Use explicit paths because variables ($DEPLOYPATH) do not persist between lines in cPanel tasks
-    - /usr/bin/rsync -a --delete --exclude='.git' --exclude='.cpanel.yml' --exclude='.gitignore' ./ /home1/spreaeb3/public_html/
-    
-    # Set permissions
-    - /usr/bin/find /home1/spreaeb3/public_html/ -type d -exec chmod 755 {} \;
-    - /usr/bin/find /home1/spreaeb3/public_html/ -type f -exec chmod 644 {} \;
