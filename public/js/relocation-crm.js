@@ -128,3 +128,51 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, 2500); // Ticks every 2.5 seconds
 });
+
+// 📈 RELOCATION MORTGAGE API CALCULATOR LOGIC
+function calculateAPI() {
+    // 1. Get Values
+    const price = parseInt(document.getElementById('home-price').value);
+    const downPercent = parseInt(document.getElementById('down-payment').value);
+    const rate = parseFloat(document.getElementById('interest-rate').value);
+
+    // 2. Math
+    const downPaymentAmount = price * (downPercent / 100);
+    const principal = price - downPaymentAmount;
+
+    // Monthly Interest Rate
+    const r = (rate / 100) / 12;
+    // 30 Year Fixed = 360 months
+    const n = 360;
+
+    // M = P [ i(1 + i)^n ] / [ (1 + i)^n - 1 ]
+    let monthlyPI = 0;
+    if (r > 0) {
+        monthlyPI = principal * (r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    } else {
+        monthlyPI = principal / n;
+    }
+
+    // Property Tax (Estimated 1.25% in LA County)
+    const annualTax = price * 0.0125;
+    const monthlyTax = annualTax / 12;
+
+    const totalMonthly = monthlyPI + monthlyTax;
+
+    // 3. Update DOM Displays
+    document.getElementById('price-display').innerText = '$' + price.toLocaleString();
+    document.getElementById('down-display').innerText = `${downPercent}% ($${downPaymentAmount.toLocaleString()})`;
+    document.getElementById('rate-display').innerText = rate.toFixed(1) + '%';
+
+    // Update Big Numbers
+    document.getElementById('monthly-payment').innerText = '$' + Math.round(totalMonthly).toLocaleString();
+    document.getElementById('pi-breakdown').innerText = '$' + Math.round(monthlyPI).toLocaleString();
+    document.getElementById('tax-breakdown').innerText = '$' + Math.round(monthlyTax).toLocaleString();
+}
+
+// Run once on load to populate defaults
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('home-price')) {
+        calculateAPI();
+    }
+});

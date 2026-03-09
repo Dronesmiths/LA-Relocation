@@ -421,78 +421,139 @@
     </div>
   </section>
 
-  <!-- 💎 WHY BUY OR SELL IN LOS ANGELES (Luxury Multi-Card Slider – Faster & Updated CTA) -->
-  <section id="la-lux-slider"
-    style="background:#0b0b0b;padding:120px 25px;color:#fff;text-align:center;position:relative;overflow:hidden;">
-    <div style="max-width:1250px;margin:auto;position:relative;z-index:2;">
-
-      <h2 style="font-family:'Roboto Condensed',sans-serif;
-               font-size:clamp(42px,6.5vw,64px);
-               text-transform:uppercase;
-               font-weight:900;
-               letter-spacing:1px;
-               color:#fff;
-               margin-bottom:40px;">
-        Why Buy or Sell in <span style="color:#e63946;">Los Angeles</span>?
-      </h2>
-
-      <p
-        style="font-size:20px;line-height:1.9;color:#ddd;margin-bottom:70px;max-width:780px;margin-left:auto;margin-right:auto;">
-        Los Angeles is more than a market — it’s a lifestyle. Whether you’re purchasing your first condo downtown,
-        upgrading to a hillside estate, or selling a coastal retreat, <strong>Carol Anderson</strong> and
-        <strong>LA Relocation</strong> bring unmatched experience across every neighborhood and price point.
-      </p>
-
-      <!-- 🌆 Sliding Container -->
-      <div class="slider-wrapper">
-        <div class="slider-track">
-          <div class="lux-card">
-            <h4>Diverse Neighborhoods</h4>
-            <p>From Malibu to Silver Lake — each corner of LA tells its own story.</p>
-          </div>
-          <div class="lux-card">
-            <h4>Thriving Market</h4>
-            <p>Dynamic opportunities in film, tech, design, and real estate growth.</p>
-          </div>
-          <div class="lux-card">
-            <h4>Enduring Value</h4>
-            <p>Homes in LA remain a symbol of luxury, longevity, and investment security.</p>
-          </div>
-          <div class="lux-card">
-            <h4>Prime Location</h4>
-            <p>Central access to beaches, business hubs, and breathtaking landscapes.</p>
-          </div>
-          <div class="lux-card">
-            <h4>Exclusive Listings</h4>
-            <p>Gain access to LA’s most desirable homes before they hit the public market.</p>
-          </div>
-          <div class="lux-card">
-            <h4>Personalized Service</h4>
-            <p>Experience bespoke guidance from Carol Anderson’s award-winning team.</p>
-          </div>
-
-          <!-- Duplicate for seamless scroll -->
-          <div class="lux-card">
-            <h4>Diverse Neighborhoods</h4>
-            <p>From Malibu to Silver Lake — each corner of LA tells its own story.</p>
-          </div>
-        </div>
-      </div>
-
-      <a href="tel:6614067568" style="display:inline-block;background:#e63946;color:#fff;
-              padding:17px 45px;font-weight:700;text-transform:uppercase;
-              border-radius:10px;text-decoration:none;letter-spacing:1px;
-              margin-top:60px;
-              box-shadow:0 10px 30px rgba(230,57,70,0.35);
-              transition:all .4s ease;">
-        Contact Carol: (661) 406-7568
-      </a>
+  <!-- 📊 RELOCATION MORTGAGE & ROI API WIDGET -->
+  <section id="mortgage-api"
+    style="background:#0a0a0a;padding:120px 25px;color:#fff;position:relative;overflow:hidden;border-top:1px solid #222;border-bottom:1px solid #222;">
+    <!-- Background Grid Effect -->
+    <div
+      style="position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);background-size:40px 40px;opacity:0.5;pointer-events:none;">
     </div>
 
-    <!-- Background Overlay -->
-    <div style="position:absolute;inset:0;
-              background:url('/images/Los-Angeles-City.webp') center/cover no-repeat;
-              opacity:0.08;filter:blur(6px);z-index:1;"></div>
+    <div style="max-width:1200px;margin:auto;position:relative;z-index:2;">
+
+      <div style="text-align:center;margin-bottom:60px;">
+        <h2
+          style="font-family:'Roboto Condensed',sans-serif;font-size:clamp(30px,5vw,52px);text-transform:uppercase;font-weight:900;letter-spacing:1px;color:#fff;margin-bottom:15px;">
+          Relocation <span style="color:#e63946;">Mortgage Simulator</span>
+        </h2>
+        <div style="width:90px;height:4px;background:#e63946;border-radius:2px;margin:20px auto 30px;"></div>
+        <p style="color:#bbb;font-size:18px;max-width:700px;margin:auto;line-height:1.6;">
+          Configure your purchase scenario below to generate real-time Los Angeles carrying cost estimations, including
+          principal, interest, taxes, and potential HOA variables based on region.
+        </p>
+      </div>
+
+      <!-- Widget Container -->
+      <div
+        style="background:#111;border:1px solid #333;border-radius:16px;box-shadow:0 20px 50px rgba(0,0,0,0.8);display:flex;flex-wrap:wrap;overflow:hidden;">
+
+        <!-- Left Side: Interactive Controls -->
+        <div style="flex:1 1 400px;padding:50px;background:#161616;border-right:1px solid #2a2a2a;">
+          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;">
+            <h3
+              style="font-family:'Roboto Condensed',sans-serif;text-transform:uppercase;font-size:22px;color:#e0e0e0;margin:0;">
+              Input Parameters</h3>
+            <span
+              style="font-size:10px;color:#e63946;font-family:monospace;border:1px solid #e63946;padding:3px 6px;border-radius:3px;">LIVE
+              SYTLE</span>
+          </div>
+
+          <!-- Home Price Slider -->
+          <div style="margin-bottom:25px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <label
+                style="font-size:12px;text-transform:uppercase;color:#888;font-weight:700;letter-spacing:1px;">Purchase
+                Price</label>
+              <span id="price-display"
+                style="color:#fff;font-family:monospace;font-size:16px;font-weight:bold;">$1,250,000</span>
+            </div>
+            <input type="range" id="home-price" min="500000" max="5000000" step="50000" value="1250000"
+              class="api-slider" oninput="calculateAPI()">
+          </div>
+
+          <!-- Downpayment Slider -->
+          <div style="margin-bottom:25px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <label style="font-size:12px;text-transform:uppercase;color:#888;font-weight:700;letter-spacing:1px;">Down
+                Payment</label>
+              <span id="down-display" style="color:#fff;font-family:monospace;font-size:16px;font-weight:bold;">20%
+                ($250,000)</span>
+            </div>
+            <input type="range" id="down-payment" min="0" max="100" step="1" value="20" class="api-slider"
+              oninput="calculateAPI()">
+          </div>
+
+          <!-- Interest Rate Slider -->
+          <div style="margin-bottom:35px;">
+            <div style="display:flex;justify-content:space-between;margin-bottom:8px;">
+              <label
+                style="font-size:12px;text-transform:uppercase;color:#888;font-weight:700;letter-spacing:1px;">Interest
+                Rate</label>
+              <span id="rate-display"
+                style="color:#fff;font-family:monospace;font-size:16px;font-weight:bold;">6.5%</span>
+            </div>
+            <input type="range" id="interest-rate" min="3.0" max="10.0" step="0.1" value="6.5" class="api-slider"
+              oninput="calculateAPI()">
+          </div>
+
+          <button onclick="openRelocationModal('inbound')"
+            style="width:100%;background:#e63946;color:#fff;border:none;padding:18px;border-radius:8px;font-family:'Montserrat',sans-serif;font-weight:700;text-transform:uppercase;font-size:14px;letter-spacing:1px;cursor:pointer;transition:all 0.3s ease;box-shadow:0 8px 20px rgba(230,57,70,0.3);">
+            Request Pre-Approval via Network
+          </button>
+        </div>
+
+        <!-- Right Side: API Data Readout -->
+        <div
+          style="flex:1.5 1 500px;padding:50px;position:relative;background:radial-gradient(circle at top right, rgba(230,57,70,0.05), transparent 60%);">
+
+          <div style="text-align:center;margin-bottom:40px;">
+            <div
+              style="color:#888;font-size:12px;text-transform:uppercase;letter-spacing:2px;font-weight:700;margin-bottom:10px;">
+              Estimated Monthly Carriage</div>
+            <div id="monthly-payment"
+              style="font-size:clamp(45px, 6vw, 75px);font-family:'Roboto Condensed',sans-serif;font-weight:300;color:#fff;line-height:1;margin-bottom:5px;">
+              $7,344
+            </div>
+            <div style="color:#e63946;font-family:monospace;font-size:14px;">/ month</div>
+          </div>
+
+          <div
+            style="display:grid;grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));gap:20px;margin-bottom:30px;">
+            <!-- Breakdown 1 -->
+            <div
+              style="background:#0a0a0a;border:1px solid #2a2a2a;padding:20px;border-radius:10px;border-left:3px solid #ff4c5c;">
+              <div
+                style="color:#888;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;font-weight:700;">
+                Principal & Interest</div>
+              <div id="pi-breakdown"
+                style="color:#fff;font-size:24px;font-weight:500;font-family:'Roboto Condensed',sans-serif;">$6,321
+              </div>
+            </div>
+            <!-- Breakdown 2 -->
+            <div
+              style="background:#0a0a0a;border:1px solid #2a2a2a;padding:20px;border-radius:10px;border-left:3px solid #4CAF50;">
+              <div
+                style="color:#888;font-size:11px;text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;font-weight:700;">
+                Est. Property Tax (~1.25%)</div>
+              <div id="tax-breakdown"
+                style="color:#fff;font-size:24px;font-weight:500;font-family:'Roboto Condensed',sans-serif;">$1,302
+              </div>
+            </div>
+          </div>
+
+          <div
+            style="background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.1);padding:20px;border-radius:8px;">
+            <p style="color:#aaa;font-size:13px;line-height:1.6;margin:0;font-family:monospace;">
+              > SYSTEM NOTE: CA Proposition 13 caps annual property tax increases at 2%. This computation includes
+              standardized LA County tax averages. PMI omitted assuming 20% down. To refine this calculation based on
+              specific HOA districts, contact the concierge.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
   </section>
 
   <!-- 🌆 WHY WORK WITH CAROL -->
