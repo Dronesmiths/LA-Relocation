@@ -16,6 +16,13 @@ import comparative_intelligence as comp
 import knowledge_fabric as kf
 import materializer as mat
 import cloud_deployer as deployer
+import neighborhood_discovery as nd
+import geo_radius_engine as geo_radius
+import lead_capture_engine as lce
+import ai_chat_agent as ai_chat
+import market_prediction_engine as mpe
+import seller_intent_detection as seller_intent
+import migration_intelligence_engine as mie
 
 """
 ORCHESTRATOR STAGES:
@@ -149,19 +156,32 @@ def run_autonomous(mode="full_autonomous"):
     safe_execute("DATA_SYNC", lambda: sf.cmd_sync_external_apis(), state)
     
     # 2. DEMAND DISCOVERY
-    safe_execute("DEMAND_DISCOVERY", lambda: intent.detect_buyer_intent(), state)
+    def demand_sequence():
+        intent.detect_buyer_intent()
+        seller_intent.detect_seller_intent()
+        
+    safe_execute("DEMAND_DISCOVERY", demand_sequence, state)
     
     # 3. AUTHORITY ENRICHMENT
     safe_execute("AUTHORITY_ENRICHMENT", lambda: authority_signals.sync_authority_signals(), state)
     
     # 4. BEHAVIOR ANALYSIS
-    safe_execute("BEHAVIOR_ANALYSIS", lambda: behavior_ingest.analyze_user_behavior(), state)
+    def behavior_sequence():
+        behavior_ingest.analyze_user_behavior()
+        lce.analyze_lead_performance()
+        ai_chat.analyze_chat_intent()
+        
+    safe_execute("BEHAVIOR_ANALYSIS", behavior_sequence, state)
     
     # 5. EXPANSION PLANNING
     def expansion_sequence():
         sf.cmd_expand_geo_clusters()
+        nd.discover_neighborhoods()
         idx.build_idx_traffic()
         comp.build_comparisons()
+        geo_radius.build_radius_pages()
+        mpe.build_market_predictions()
+        mie.build_migration_pages()
         sf.cmd_build_master_site_map()
         
     safe_execute("EXPANSION_PLANNING", expansion_sequence, state)

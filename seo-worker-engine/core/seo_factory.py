@@ -100,7 +100,7 @@ SEO_GROWTH_TABS = {
 PHASE1_TABS = {
     'Page_Inventory': [['URL', 'Page Type', 'City', 'Topic', 'Status', 'Notes']],
     'Cities': [['City', 'County', 'State', 'Slug', 'Existing Page']],
-    'Neighborhoods': [['Neighborhood', 'City', 'Slug', 'Existing Page']],
+    'Neighborhoods': [['Neighborhood', 'City', 'Slug', 'Existing_Page', 'Discovery_Source', 'Priority']],
     'Blog_Topics': [['Blog Title', 'Keyword', 'City', 'URL', 'Status']],
     'Services': [['Service', 'Slug', 'URL', 'Status']],
     'IDX_Pages': [['Title', 'Slug', 'URL', 'Status']],
@@ -139,7 +139,32 @@ PHASE1_TABS = {
     'Behavior_Insights': [['City', 'Neighborhood', 'Insight_Type', 'Insight', 'Priority']],
     'City_Comparisons': [['City_A', 'City_B', 'Distance_Miles', 'Price_Diff_Percent', 'Housing_Score', 'Safety_Score', 'Schools_Score', 'Commute_Score', 'Overall_Winner', 'Slug', 'Priority', 'Status']],
     'Deployment_Queue': [['URL', 'Page_Type', 'City', 'Cluster', 'Generated_At', 'Validation_Status', 'Deployment_Status', 'Priority', 'Notes']],
-    'System_Health': [['Metric', 'Value', 'Threshold', 'Status', 'Recommended_Action']]
+    'System_Health': [['Metric', 'Value', 'Threshold', 'Status', 'Recommended_Action']],
+    'Neighborhood_Dataset': [['Neighborhood_Name', 'City', 'County', 'Latitude', 'Longitude', 'Population', 'Geo_Source', 'Discovery_Method', 'Priority', 'Status']],
+    'Neighborhood_Pages': [['City', 'Neighborhood', 'Slug', 'Page_Type', 'Priority', 'Exists', 'Needs_Generation']],
+    'Lead_Events': [['Timestamp', 'Page_URL', 'City', 'Neighborhood', 'Intent_Type', 'Lead_Type', 'Action', 'Device_Type', 'Session_ID']],
+    'Lead_Sources': [['Page_URL', 'City', 'Page_Type', 'Intent_Type', 'Visitors', 'Leads', 'Conversion_Rate', 'Primary_Lead_Type', 'Priority']],
+    'Lead_Capture_Strategies': [['Page_Type', 'Intent_Type', 'Lead_Widget', 'Placement', 'Priority']],
+    'Lead_Conversion_Insights': [['City', 'Page_Type', 'Insight', 'Recommended_Action', 'Priority']],
+    'Radius_Hubs': [['Hub_Name', 'Hub_Type', 'Latitude', 'Longitude', 'County', 'State', 'Priority', 'Status']],
+    'Radius_Pages': [['Hub_Name', 'Location_Name', 'Page_Angle', 'Slug', 'Page_Type', 'Priority', 'Exists', 'Needs_Generation']],
+    'Radius_Insights': [['Hub_Name', 'Insight_Type', 'Description', 'Priority']],
+    'Radius_Pairs': [['Hub_Name', 'Location_Name', 'Location_Type', 'Distance_Miles', 'Estimated_Drive_Time', 'Relationship_Type', 'Priority', 'Status']],
+    'Chat_Interactions': [['Timestamp', 'Session_ID', 'Page_URL', 'User_Query', 'Intent_Type', 'City', 'Neighborhood', 'Response_Type', 'Lead_Triggered', 'Device_Type']],
+    'Chat_Insights': [['Topic', 'City', 'Query_Count', 'Intent_Type', 'Recommended_Page', 'Priority']],
+    'Chat_Leads': [['Timestamp', 'Session_ID', 'City', 'Neighborhood', 'Lead_Type', 'Contact_Method', 'Status']],
+    'Market_Signals': [['City', 'Neighborhood', 'Median_Home_Price', 'Median_Price_Per_SqFt', 'Inventory', 'Days_On_Market', 'Yearly_Change', 'Quarterly_Change', 'New_Listings', 'Price_Reductions', 'Migration_Trend', 'Rent_Growth', 'Last_Updated']],
+    'Market_Predictions': [['City', 'Neighborhood', 'Momentum_Score', 'Trend_Label', 'Confidence_Level', 'Primary_Drivers', 'Risk_Factors', 'Last_Calculated', 'Priority']],
+    'Trend_Insights': [['City', 'Insight_Type', 'Insight', 'Supporting_Signals', 'Recommended_Page_Type', 'Priority']],
+    'Prediction_Pages': [['City', 'Neighborhood', 'Slug', 'Page_Angle', 'Page_Type', 'Priority', 'Exists', 'Needs_Generation']],
+    'Seller_Intent_Queries': [['Query', 'City', 'Neighborhood', 'Intent_Type', 'Query_Count', 'Source', 'Priority']],
+    'Seller_Insights': [['City', 'Neighborhood', 'Insight_Type', 'Insight', 'Supporting_Data', 'Recommended_Page', 'Priority']],
+    'Seller_Pages': [['City', 'Neighborhood', 'Slug', 'Page_Angle', 'Page_Type', 'Priority', 'Exists', 'Needs_Generation']],
+    'Home_Value_Leads': [['Timestamp', 'City', 'Neighborhood', 'Property_Type', 'Lead_Type', 'Contact_Method', 'Status']],
+    'Migration_Flows': [['Origin_City', 'Destination_City', 'Distance_Miles', 'Median_Price_Diff', 'Crime_Diff', 'School_Diff', 'Commute_Diff', 'Migration_Trend', 'Search_Demand', 'Priority']],
+    'Migration_Signals': [['Signal_ID', 'Source_Type', 'Origin', 'Destination', 'Intent_Score', 'Last_Detected']],
+    'Migration_Insights': [['Origin_City', 'Destination_City', 'Insight_Type', 'Insight', 'Supporting_Data', 'Recommended_Page', 'Priority']],
+    'Migration_Pages': [['Origin_City', 'Destination_City', 'Slug', 'Page_Angle', 'Page_Type', 'Priority', 'Exists', 'Needs_Generation']]
 }
 
 
@@ -4005,7 +4030,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="SEO Factory: Audit, Sync, and Growth Engine")
     
     # Simple Positional Command
-    parser.add_argument('command', choices=['audit', 'sync', 'generate', 'discover', 'internal', 'update-internal', 'reinforce', 'autopilot', 'hubs', 'produce-subpages', 'sitemap', 'expand-locations', 'init-phase1', 'init-phase2', 'init-crime', 'init-schools', 'init-housing', 'init-commute', 'ingest-amenities', 'rebuild-internal-authority', 'generate-relocation-guides', 'ingest-demographics', 'generate-modifier-plan', 'expand-geo-clusters', 'generate-feature-pages', 'validate-data-blocks', 'calculate-authority-score', 'queue-data-reinforcements', 'build-command-center', 'build-master-site-map', 'sync-external-apis', 'materialize-pages', 'build-geo-grid', 'build-idx-traffic', 'detect-buyer-intent', 'sync-authority-signals', 'analyze-user-behavior', 'build-comparisons', 'generate-narratives', 'autonomous-run', 'deploy-pages'], help='Command to run')
+    parser.add_argument('command', choices=['audit', 'sync', 'generate', 'discover', 'internal', 'update-internal', 'reinforce', 'autopilot', 'hubs', 'produce-subpages', 'sitemap', 'expand-locations', 'init-phase1', 'init-phase2', 'init-crime', 'init-schools', 'init-housing', 'init-commute', 'ingest-amenities', 'rebuild-internal-authority', 'generate-relocation-guides', 'ingest-demographics', 'generate-modifier-plan', 'expand-geo-clusters', 'generate-feature-pages', 'validate-data-blocks', 'calculate-authority-score', 'queue-data-reinforcements', 'build-command-center', 'build-master-site-map', 'sync-external-apis', 'materialize-pages', 'build-geo-grid', 'build-idx-traffic', 'detect-buyer-intent', 'sync-authority-signals', 'analyze-user-behavior', 'build-comparisons', 'generate-narratives', 'autonomous-run', 'deploy-pages', 'discover-neighborhoods', 'analyze-lead-performance', 'build-radius-pages', 'analyze-chat-intent', 'build-market-predictions', 'detect-seller-intent', 'build-migration-pages'], help='Command to run')
     
     # Optional Arguments for 'generate'
     parser.add_argument('--type', choices=['location', 'service', 'blog', 'newsletter'], help='Type of page to generate')
@@ -4136,5 +4161,26 @@ if __name__ == "__main__":
     elif args.command == 'deploy-pages':
         import cloud_deployer as deployer
         deployer.deploy_pages(mode=args.mode, with_git=args.with_git)
+    elif args.command == 'discover-neighborhoods':
+        import neighborhood_discovery as nd
+        nd.discover_neighborhoods()
+    elif args.command == 'analyze-lead-performance':
+        import lead_capture_engine as lce
+        lce.analyze_lead_performance()
+    elif args.command == 'build-radius-pages':
+        import geo_radius_engine as geo_radius
+        geo_radius.build_radius_pages()
+    elif args.command == 'analyze-chat-intent':
+        import ai_chat_agent as ai_chat
+        ai_chat.analyze_chat_intent()
+    elif args.command == 'build-market-predictions':
+        import market_prediction_engine as mpe
+        mpe.build_market_predictions()
+    elif args.command == 'detect-seller-intent':
+        import seller_intent_detection as seller_intent
+        seller_intent.detect_seller_intent()
+    elif args.command == 'build-migration-pages':
+        import migration_intelligence_engine as mie
+        mie.build_migration_pages()
     else:
         parser.print_help()
