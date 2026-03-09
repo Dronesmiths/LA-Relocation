@@ -169,7 +169,14 @@ PHASE1_TABS = {
     'Authority_Loops': [['Loop_ID', 'Primary_Hub', 'Supporting_URL', 'Page_Type', 'Anchor_Angle', 'Loop_Type', 'Priority', 'Status']],
     'Authority_Links': [['Source_URL', 'Target_URL', 'Anchor_Text', 'Anchor_Type', 'Link_Context', 'Priority', 'Status']],
     'Authority_Gaps': [['URL', 'Page_Type', 'Missing_Link_Type', 'Recommended_Target', 'Priority', 'Status']],
-    'Authority_Flywheel_Score': [['City', 'Total_Pages_In_Cluster', 'Hub_Count', 'Loop_Count', 'Internal_Link_Coverage', 'Semantic_Anchor_Diversity', 'Gap_Count', 'Hub_Gravity_Score', 'Flywheel_Score', 'Recommended_Action']]
+    'Authority_Flywheel_Score': [['City', 'Total_Pages_In_Cluster', 'Hub_Count', 'Loop_Count', 'Internal_Link_Coverage', 'Semantic_Anchor_Diversity', 'Gap_Count', 'Hub_Gravity_Score', 'Flywheel_Score', 'Recommended_Action']],
+    'System_Audit_Report': [['Component', 'Status', 'Details', 'Action_Required']],
+    'Generation_Issues': [['URL', 'Issue_Type', 'Description', 'Priority', 'Status']],
+    'SEO_Audit': [['URL', 'Title', 'Meta_Description', 'H1', 'Status_Code', 'Issue', 'Priority']],
+    'Authority_Audit': [['URL', 'Hub_Support_Status', 'Parent_Links', 'Issue_Type', 'Priority']],
+    'Indexing_Status': [['URL', 'Robots_Rule', 'Canonical', 'Index_Status']],
+    'Performance_Report': [['URL', 'Page_Size_KB', 'Load_Time_MS', 'Issue', 'Status']],
+    'Lead_System_Test': [['URL', 'Event_Type', 'Logged_Correctly', 'Status']]
 }
 
 
@@ -4035,7 +4042,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="SEO Factory: Audit, Sync, and Growth Engine")
     
     # Simple Positional Command
-    parser.add_argument('command', choices=['audit', 'sync', 'generate', 'discover', 'internal', 'update-internal', 'reinforce', 'autopilot', 'hubs', 'produce-subpages', 'sitemap', 'expand-locations', 'init-phase1', 'init-phase2', 'init-crime', 'init-schools', 'init-housing', 'init-commute', 'ingest-amenities', 'rebuild-internal-authority', 'generate-relocation-guides', 'ingest-demographics', 'generate-modifier-plan', 'expand-geo-clusters', 'generate-feature-pages', 'validate-data-blocks', 'calculate-authority-score', 'queue-data-reinforcements', 'build-command-center', 'build-master-site-map', 'sync-external-apis', 'materialize-pages', 'build-geo-grid', 'build-idx-traffic', 'detect-buyer-intent', 'sync-authority-signals', 'analyze-user-behavior', 'build-comparisons', 'generate-narratives', 'autonomous-run', 'deploy-pages', 'discover-neighborhoods', 'analyze-lead-performance', 'build-radius-pages', 'analyze-chat-intent', 'build-market-predictions', 'detect-seller-intent', 'build-migration-pages', 'build-authority-flywheel'], help='Command to run')
+    parser.add_argument('command', choices=['audit', 'sync', 'generate', 'discover', 'internal', 'update-internal', 'reinforce', 'autopilot', 'hubs', 'produce-subpages', 'sitemap', 'expand-locations', 'init-phase1', 'init-phase2', 'init-crime', 'init-schools', 'init-housing', 'init-commute', 'ingest-amenities', 'rebuild-internal-authority', 'generate-relocation-guides', 'ingest-demographics', 'generate-modifier-plan', 'expand-geo-clusters', 'generate-feature-pages', 'validate-data-blocks', 'calculate-authority-score', 'queue-data-reinforcements', 'build-command-center', 'build-master-site-map', 'sync-external-apis', 'materialize-pages', 'build-geo-grid', 'build-idx-traffic', 'detect-buyer-intent', 'sync-authority-signals', 'analyze-user-behavior', 'build-comparisons', 'generate-narratives', 'autonomous-run', 'deploy-pages', 'discover-neighborhoods', 'analyze-lead-performance', 'build-radius-pages', 'analyze-chat-intent', 'build-market-predictions', 'detect-seller-intent', 'build-migration-pages', 'build-authority-flywheel', 'system-audit', 'validate-generation', 'seo-audit', 'build-sitemap', 'deploy-preview'], help='Command to run')
     
     # Optional Arguments for 'generate'
     parser.add_argument('--type', choices=['location', 'service', 'blog', 'newsletter'], help='Type of page to generate')
@@ -4190,5 +4197,20 @@ if __name__ == "__main__":
     elif args.command == 'build-authority-flywheel':
         import authority_flywheel_engine as afe
         afe.build_authority_flywheel()
+    elif args.command == 'system-audit':
+        import system_qa_engine as qa
+        qa.system_audit()
+    elif args.command == 'validate-generation':
+        import system_qa_engine as qa
+        qa.validate_generation()
+    elif args.command == 'seo-audit':
+        import system_qa_engine as qa
+        qa.seo_audit()
+    elif args.command == 'build-sitemap':
+        import system_qa_engine as qa
+        qa.build_sitemap()
+    elif args.command == 'deploy-preview':
+        import system_qa_engine as qa
+        qa.deploy_preview()
     else:
         parser.print_help()
