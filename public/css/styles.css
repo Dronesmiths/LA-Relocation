@@ -765,29 +765,18 @@ nav a:hover {
     margin-inline: auto;
 }
 
-/* Slider */
-.awards-slider {
-    overflow: hidden;
-    width: 100%;
-    position: relative;
-    z-index: 2;
-    background: #000;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 60px 0;
-}
-
-.awards-track {
-    display: inline-flex;
-    gap: 80px;
-    padding: 0 40px;
-    animation: awards-marquee 40s linear infinite;
-    will-change: transform;
+/* Static Awards Grid */
+.awards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+    padding: 30px 20px 0;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .award-card {
-    flex: 0 0 auto;
-    width: 220px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -795,7 +784,7 @@ nav a:hover {
 
 .award-card img {
     width: 100%;
-    max-width: 210px;
+    max-width: 125px;
     height: auto;
     object-fit: contain;
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.6)) brightness(1.1);
@@ -809,19 +798,9 @@ nav a:hover {
     opacity: 1;
 }
 
-@keyframes awards-marquee {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-50%);
-    }
-}
-
 @media (max-width: 1024px) {
-    .award-card {
-        width: 200px;
+    .award-card img {
+        max-width: 105px;
     }
 }
 
@@ -835,12 +814,12 @@ nav a:hover {
         margin-bottom: 50px;
     }
 
-    .award-card {
-        width: 180px;
+    .awards-grid {
+        gap: 40px;
     }
 
     .award-card img {
-        max-width: 170px;
+        max-width: 90px;
     }
 }
 
