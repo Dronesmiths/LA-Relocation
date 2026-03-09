@@ -4,15 +4,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{LOCATION}} Neighborhood Guide | LA Relocation</title>
+    <title>{{TITLE}} | LA Relocation</title>
+    <meta name="description"
+        content="Explore {{LOCATION}} real estate, homes for sale, schools, commute times, and lifestyle insights.">
+    <style>
+        :root {
+            --primary: #0a2540;
+            --secondary: #0077ff;
+            --accent: #e5f1ff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-light: #f8f9fa;
+            --border: #eaeff5;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header.hero {
+            background: var(--bg-light);
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-intro {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.125rem;
+            color: var(--text-light);
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            background: #fff;
+            padding: 15px 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border);
+        }
+
+        .stat-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--secondary);
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .section-wrapper {
+            padding: 50px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .section-wrapper:nth-child(even) {
+            background: var(--bg-light);
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.75rem;
+            margin-bottom: 20px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .card {
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .idx-hook {
+            background: var(--primary);
+            color: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .idx-hook h2 {
+            color: #fff;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: #fff;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background: #005ce6;
+        }
+
+        .expert-trust {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: var(--accent);
+            padding: 30px;
+            border-radius: 12px;
+        }
+
+        .expert-trust img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+            padding: 15px 0;
+        }
+
+        .faq-item h3 {
+            margin: 0 0 10px 0;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .faq-item p {
+            margin: 0;
+            color: var(--text-light);
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Neighborhood Insights for {{LOCATION}}</h1>
-    <div class="market-section">{{market_block}}</div>
-    <div class="crime-section">{{crime_block}}</div>
-    <div class="school-section">{{school_block}}</div>
-    <div class="amenities-section">{{amenities_block}}</div>
+
+    <!-- 1. HERO SECTION -->
+    <header class="hero">
+        <div class="container">
+            <h1>{{TITLE}}</h1>
+            <p class="hero-intro">{{HERO_INTRO}}</p>
+            <div class="stats-bar">
+                {{HERO_STATS_BAR}}
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- 2. WHO THIS IS BEST FOR -->
+        <section class="section-wrapper">
+            <h2>Who This Neighborhood Fits Best</h2>
+            <div class="intent-overview">
+                {{buyer_fit_block}}
+            </div>
+        </section>
+
+        <!-- 3. HOUSING MARKET SNAPSHOT & 4. LIFESTYLE -->
+        <section class="section-wrapper">
+            <div class="grid-2">
+                <div class="card market-snapshot">
+                    <h2>Housing Market Snapshot</h2>
+                    {{market_block}}
+                </div>
+                <div class="card local-lifestyle">
+                    <h2>Local Lifestyle</h2>
+                    {{lifestyle_block}}
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. SCHOOLS & 6. COMMUTE -->
+        <section class="section-wrapper">
+            <div class="grid-2">
+                <div class="card schools-snapshot">
+                    <h2>Nearby Schools & Education</h2>
+                    {{school_block}}
+                </div>
+                <div class="card commute-context">
+                    <h2>Location & Commute</h2>
+                    {{commute_block}}
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. NEARBY NEIGHBORHOODS (Internal Authority) -->
+        <section class="section-wrapper">
+            <h2>Explore Nearby Areas</h2>
+            <div class="nearby-links">
+                {{nearby_comparison_block}}
+            </div>
+        </section>
+
+        <!-- 8. IDX HOOK (Lead Gen) -->
+        <section class="idx-hook">
+            <h2>Homes for Sale in {{LOCATION}}</h2>
+            <p>Browse active listings, refine your search by price, or get alerted when new homes hit the market.</p>
+            {{idx_block}}
+            <a href="#idx-search" class="btn">Search All Homes</a>
+        </section>
+
+        <!-- 9. LOCAL EXPERT (E-E-A-T Trust Signal) -->
+        <section class="section-wrapper">
+            <div class="expert-trust">
+                <!-- Using a generic placeholder icon -->
+                <div class="expert-avatar"
+                    style="width:80px;height:80px;background:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:2rem;">
+                    🛡️</div>
+                <div class="expert-info">
+                    <h2>About Your Local Guide</h2>
+                    <p>We provide accurate, data-driven real estate insights for the Antelope Valley and beyond.
+                        Relocating? Let us help you find the perfect community.</p>
+                    <a href="#contact" class="btn" style="margin-top:10px;padding:8px 20px;font-size:0.9rem;">Ask a
+                        Local Expert</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 10. FAQS -->
+        <section class="section-wrapper" style="border-bottom:none;">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-accordion">
+                {{faq_block}}
+                <div class="faq-item">
+                    <h3>Is {{LOCATION}} a good place to live?</h3>
+                    <p>Many buyers find {{LOCATION}} offers a great balance of amenities and lifestyle options tailored
+                        to their needs.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What types of homes are available here?</h3>
+                    <p>You can find a diverse mix of housing, from entry-level communities to established luxury
+                        properties, depending on the area.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
 </body>
 
 </html>
