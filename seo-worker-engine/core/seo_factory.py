@@ -186,7 +186,24 @@ PHASE1_TABS = {
     'Publishing_Schedule': [['Date', 'Slug', 'Page_Type', 'City', 'Priority', 'Publish_Status']],
     'Velocity_Config': [['Page_Type', 'Max_Per_Day', 'Max_Per_Week', 'Priority', 'Publish_Mode']],
     'Publishing_Log': [['Date', 'Slug', 'Page_Type', 'Module_Source', 'Index_Status', 'Traffic_Status']],
-    'Solo_Agent_Leads': [['Timestamp', 'Lead_Name', 'Lead_Email', 'Lead_Phone', 'Lead_Type', 'Page_Source', 'City', 'Neighborhood', 'Routed_Via', 'Status']]
+    'Solo_Agent_Leads': [['Timestamp', 'Lead_Name', 'Lead_Email', 'Lead_Phone', 'Lead_Type', 'Page_Source', 'City', 'Neighborhood', 'Routed_Via', 'Status']],
+    'Data_Report_Topics': [['Report_Topic', 'Slug', 'Primary_Data_Source', 'Ranking_Method', 'Priority']],
+    'City_Data_Index': [['City', 'Crime_Index', 'Median_Home_Price', 'Price_Growth', 'School_Rating', 'Population_Growth', 'Commute_Score', 'Lifestyle_Score', 'Affordability_Index']],
+    'Report_Rankings': [['Report_Topic', 'Rank', 'City', 'Score', 'Supporting_Data']],
+    'Report_Pages': [['Slug', 'Report_Topic', 'Year', 'Priority', 'Exists', 'Needs_Generation']],
+    'News_Topics': [['Topic_Type', 'Slug', 'Content_Format', 'Priority']],
+    'News_Signals': [['City', 'Signal_Type', 'Signal_Value', 'Supporting_Data', 'Priority']],
+    'News_Pages': [['Slug', 'City', 'Topic_Type', 'Priority', 'Exists', 'Needs_Generation']],
+    'News_Log': [['Date', 'Slug', 'Topic_Type', 'Index_Status', 'Traffic_Status']],
+    'Geo_Hubs': [['Region', 'City', 'City_Hub_URL', 'Priority']],
+    'Geo_Layers': [['City', 'Layer_Type', 'Page_Type', 'Example_Slug']],
+    'Geo_Pyramid': [['City', 'Layer_Type', 'Slug', 'Parent_Page', 'Priority']],
+    'Geo_Routing': [['Source_URL', 'Target_URL', 'Routing_Rule', 'Priority']],
+    'Intent_Matrix': [['City', 'Base_Topic', 'Intent_Angle', 'Slug', 'Intent_Type', 'Priority']],
+    'IDX_Filter_Topics': [['City', 'Filter_Type', 'Filter_Value', 'Slug', 'Priority']],
+    'IDX_Filter_Pages': [['City', 'Slug', 'Filter_Type', 'Filter_Value', 'Priority', 'Exists', 'Needs_Generation']],
+    'IDX_Filter_Data': [['City', 'Filter_Type', 'Filter_Value', 'Total_Listings', 'Avg_Price', 'Last_Updated']],
+    'IDX_Filter_Rankings': [['Slug', 'Current_Rank', 'Search_Volume', 'Keyword', 'Priority']]
 }
 
 
@@ -4052,7 +4069,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="SEO Factory: Audit, Sync, and Growth Engine")
     
     # Simple Positional Command
-    parser.add_argument('command', choices=['audit', 'sync', 'generate', 'discover', 'internal', 'update-internal', 'reinforce', 'autopilot', 'hubs', 'produce-subpages', 'sitemap', 'expand-locations', 'init-phase1', 'init-phase2', 'init-crime', 'init-schools', 'init-housing', 'init-commute', 'ingest-amenities', 'rebuild-internal-authority', 'generate-relocation-guides', 'ingest-demographics', 'generate-modifier-plan', 'expand-geo-clusters', 'generate-feature-pages', 'validate-data-blocks', 'calculate-authority-score', 'queue-data-reinforcements', 'build-command-center', 'build-master-site-map', 'sync-external-apis', 'materialize-pages', 'build-geo-grid', 'build-idx-traffic', 'detect-buyer-intent', 'sync-authority-signals', 'analyze-user-behavior', 'build-comparisons', 'generate-narratives', 'autonomous-run', 'deploy-pages', 'discover-neighborhoods', 'analyze-lead-performance', 'build-radius-pages', 'analyze-chat-intent', 'build-market-predictions', 'detect-seller-intent', 'build-migration-pages', 'build-topic-authority', 'build-authority-flywheel', 'system-audit', 'validate-generation', 'seo-audit', 'build-sitemap', 'deploy-preview', 'run-publishing-cycle', 'route-solo-leads'], help='Command to run')
+    parser.add_argument('command', choices=['audit', 'sync', 'generate', 'discover', 'internal', 'update-internal', 'reinforce', 'autopilot', 'hubs', 'produce-subpages', 'sitemap', 'expand-locations', 'init-phase1', 'init-phase2', 'init-crime', 'init-schools', 'init-housing', 'init-commute', 'ingest-amenities', 'rebuild-internal-authority', 'generate-relocation-guides', 'ingest-demographics', 'generate-modifier-plan', 'expand-geo-clusters', 'generate-feature-pages', 'validate-data-blocks', 'calculate-authority-score', 'queue-data-reinforcements', 'build-command-center', 'build-master-site-map', 'sync-external-apis', 'materialize-pages', 'build-geo-grid', 'build-idx-traffic', 'detect-buyer-intent', 'sync-authority-signals', 'analyze-user-behavior', 'build-comparisons', 'generate-narratives', 'autonomous-run', 'deploy-pages', 'discover-neighborhoods', 'analyze-lead-performance', 'build-radius-pages', 'analyze-chat-intent', 'build-market-predictions', 'detect-seller-intent', 'build-migration-pages', 'build-topic-authority', 'build-authority-flywheel', 'system-audit', 'validate-generation', 'seo-audit', 'build-sitemap', 'deploy-preview', 'run-publishing-cycle', 'route-solo-leads', 'build-data-reports', 'build-local-news', 'build-geo-pyramid', 'validate-intent-coverage', 'build-idx-filter-pages'], help='Command to run')
     
     # Optional Arguments for 'generate'
     parser.add_argument('--type', choices=['location', 'service', 'blog', 'newsletter'], help='Type of page to generate')
@@ -4231,5 +4248,20 @@ if __name__ == "__main__":
     elif args.command == 'route-solo-leads':
         import solo_agent_lead_router as salr
         salr.route_leads()
+    elif args.command == 'build-data-reports':
+        import data_report_engine as dre
+        dre.build_data_reports()
+    elif args.command == 'build-local-news':
+        import local_news_engine as lne
+        lne.build_local_news()
+    elif args.command == 'build-geo-pyramid':
+        import geo_pyramid_engine as gpe
+        gpe.build_geo_pyramid()
+    elif args.command == 'validate-intent-coverage':
+        import intent_differentiation_engine as ide
+        ide.validate_intent_coverage()
+    elif args.command == 'build-idx-filter-pages':
+        import idx_filter_engine as ife
+        ife.build_idx_filter_pages()
     else:
         parser.print_help()

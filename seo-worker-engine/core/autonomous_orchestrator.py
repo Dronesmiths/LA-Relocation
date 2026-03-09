@@ -26,6 +26,12 @@ import migration_intelligence_engine as mie
 import authority_flywheel_engine as afe
 import topic_authority_engine as tae
 import content_velocity_engine as cve
+import data_report_engine as dre
+import local_news_engine as lne
+import intent_differentiation_engine as ide
+import idx_filter_engine as ife
+import geo_pyramid_engine as gpe
+import solo_agent_lead_router as salr
 
 """
 ORCHESTRATOR STAGES:
@@ -181,13 +187,19 @@ def run_autonomous(mode="full_autonomous"):
         sf.cmd_expand_geo_clusters()
         nd.discover_neighborhoods()
         idx.build_idx_traffic()
+        ife.build_idx_filter_pages()
         comp.build_comparisons()
         geo_radius.build_radius_pages()
         mpe.build_market_predictions()
         mie.build_migration_pages()
         tae.build_topic_authority()
+        dre.build_data_reports()
+        lne.build_local_news()
+        ide.validate_intent_coverage()
+        gpe.build_geo_pyramid()
         afe.build_authority_flywheel()
         cve.schedule_content_velocity()
+        salr.route_leads()
         sf.cmd_build_master_site_map()
         
     safe_execute("EXPANSION_PLANNING", expansion_sequence, state)
