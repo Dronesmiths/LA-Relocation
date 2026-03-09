@@ -203,7 +203,15 @@ PHASE1_TABS = {
     'IDX_Filter_Topics': [['City', 'Filter_Type', 'Filter_Value', 'Slug', 'Priority']],
     'IDX_Filter_Pages': [['City', 'Slug', 'Filter_Type', 'Filter_Value', 'Priority', 'Exists', 'Needs_Generation']],
     'IDX_Filter_Data': [['City', 'Filter_Type', 'Filter_Value', 'Total_Listings', 'Avg_Price', 'Last_Updated']],
-    'IDX_Filter_Rankings': [['Slug', 'Current_Rank', 'Search_Volume', 'Keyword', 'Priority']]
+    'IDX_Filter_Rankings': [['Slug', 'Current_Rank', 'Search_Volume', 'Keyword', 'Priority']],
+    'Content_Revision_Queue': [['Slug', 'Score', 'Issues', 'Revisions_Needed']],
+    'Migration_Flows': [['Origin_City', 'Destination_City', 'Price_Difference', 'Migration_Score', 'Slug']],
+    'Relocation_Pages': [['Slug', 'Origin_City', 'Destination_City', 'Priority', 'Exists', 'Needs_Generation']],
+    'Origin_Cities': [['City', 'State', 'Population', 'Median_Home_Price']],
+    'Destination_Cities': [['City', 'Region', 'Median_Home_Price', 'Affordability_Index', 'Crime_Index', 'School_Score']],
+    'Discovery_Topics': [['Topic', 'Category', 'Priority', 'Example_Query']],
+    'Discovery_Pages': [['Slug', 'Cluster', 'Priority', 'Exists', 'Needs_Generation']],
+    'Discovery_Clusters': [['Cluster', 'Intent_Type', 'Cities_Included', 'Primary_Slug']]
 }
 
 
@@ -4069,7 +4077,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="SEO Factory: Audit, Sync, and Growth Engine")
     
     # Simple Positional Command
-    parser.add_argument('command', choices=['audit', 'sync', 'generate', 'discover', 'internal', 'update-internal', 'reinforce', 'autopilot', 'hubs', 'produce-subpages', 'sitemap', 'expand-locations', 'init-phase1', 'init-phase2', 'init-crime', 'init-schools', 'init-housing', 'init-commute', 'ingest-amenities', 'rebuild-internal-authority', 'generate-relocation-guides', 'ingest-demographics', 'generate-modifier-plan', 'expand-geo-clusters', 'generate-feature-pages', 'validate-data-blocks', 'calculate-authority-score', 'queue-data-reinforcements', 'build-command-center', 'build-master-site-map', 'sync-external-apis', 'materialize-pages', 'build-geo-grid', 'build-idx-traffic', 'detect-buyer-intent', 'sync-authority-signals', 'analyze-user-behavior', 'build-comparisons', 'generate-narratives', 'autonomous-run', 'deploy-pages', 'discover-neighborhoods', 'analyze-lead-performance', 'build-radius-pages', 'analyze-chat-intent', 'build-market-predictions', 'detect-seller-intent', 'build-migration-pages', 'build-topic-authority', 'build-authority-flywheel', 'system-audit', 'validate-generation', 'seo-audit', 'build-sitemap', 'deploy-preview', 'run-publishing-cycle', 'route-solo-leads', 'build-data-reports', 'build-local-news', 'build-geo-pyramid', 'validate-intent-coverage', 'build-idx-filter-pages'], help='Command to run')
+    parser.add_argument('command', choices=['audit', 'sync', 'generate', 'discover', 'internal', 'update-internal', 'reinforce', 'autopilot', 'hubs', 'produce-subpages', 'sitemap', 'expand-locations', 'init-phase1', 'init-phase2', 'init-crime', 'init-schools', 'init-housing', 'init-commute', 'ingest-amenities', 'rebuild-internal-authority', 'generate-relocation-guides', 'ingest-demographics', 'generate-modifier-plan', 'expand-geo-clusters', 'generate-feature-pages', 'validate-data-blocks', 'calculate-authority-score', 'queue-data-reinforcements', 'build-command-center', 'build-master-site-map', 'sync-external-apis', 'materialize-pages', 'build-geo-grid', 'build-idx-traffic', 'detect-buyer-intent', 'sync-authority-signals', 'analyze-user-behavior', 'build-comparisons', 'generate-narratives', 'autonomous-run', 'deploy-pages', 'discover-neighborhoods', 'analyze-lead-performance', 'build-radius-pages', 'analyze-chat-intent', 'build-market-predictions', 'detect-seller-intent', 'build-migration-pages', 'build-topic-authority', 'build-authority-flywheel', 'system-audit', 'validate-generation', 'seo-audit', 'build-sitemap', 'deploy-preview', 'run-publishing-cycle', 'route-solo-leads', 'build-data-reports', 'build-local-news', 'build-geo-pyramid', 'validate-intent-coverage', 'build-idx-filter-pages', 'enforce-crawl-budget', 'score-content-quality', 'inject-schema', 'inject-data-widgets', 'build-segmented-sitemaps', 'inject-trust-signals', 'build-relocation-intelligence', 'build-discovery-pages'], help='Command to run')
     
     # Optional Arguments for 'generate'
     parser.add_argument('--type', choices=['location', 'service', 'blog', 'newsletter'], help='Type of page to generate')
@@ -4263,5 +4271,29 @@ if __name__ == "__main__":
     elif args.command == 'build-idx-filter-pages':
         import idx_filter_engine as ife
         ife.build_idx_filter_pages()
+    elif args.command == 'enforce-crawl-budget':
+        import crawl_velocity_engine as crv
+        crv.enforce_crawl_budget()
+    elif args.command == 'score-content-quality':
+        import content_quality_engine as cqe
+        cqe.score_content_quality()
+    elif args.command == 'inject-schema':
+        import schema_engine as sche
+        sche.inject_schema()
+    elif args.command == 'inject-data-widgets':
+        import data_widget_engine as dwe
+        dwe.inject_data_widgets()
+    elif args.command == 'build-segmented-sitemaps':
+        import system_qa_engine as qa
+        qa.build_sitemaps()
+    elif args.command == 'inject-trust-signals':
+        import trust_signal_engine as tse
+        tse.inject_trust_signals()
+    elif args.command == 'build-relocation-intelligence':
+        import relocation_intelligence_engine as rie
+        rie.build_relocation_intelligence()
+    elif args.command == 'build-discovery-pages':
+        import property_discovery_engine as pde
+        pde.build_discovery_pages()
     else:
         parser.print_help()

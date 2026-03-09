@@ -32,6 +32,14 @@ import intent_differentiation_engine as ide
 import idx_filter_engine as ife
 import geo_pyramid_engine as gpe
 import solo_agent_lead_router as salr
+import relocation_intelligence_engine as rie
+import property_discovery_engine as pde
+import crawl_velocity_engine as crv
+import content_quality_engine as cqe
+import schema_engine as sche
+import data_widget_engine as dwe
+import system_qa_engine as qa
+import trust_signal_engine as tse
 
 """
 ORCHESTRATOR STAGES:
@@ -192,15 +200,22 @@ def run_autonomous(mode="full_autonomous"):
         geo_radius.build_radius_pages()
         mpe.build_market_predictions()
         mie.build_migration_pages()
+        rie.build_relocation_intelligence()
+        pde.build_discovery_pages()
         tae.build_topic_authority()
         dre.build_data_reports()
         lne.build_local_news()
         ide.validate_intent_coverage()
+        crv.enforce_crawl_budget()
         gpe.build_geo_pyramid()
         afe.build_authority_flywheel()
+        cqe.score_content_quality()
+        sche.inject_schema()
+        dwe.inject_data_widgets()
+        tse.inject_trust_signals()
         cve.schedule_content_velocity()
         salr.route_leads()
-        sf.cmd_build_master_site_map()
+        qa.build_sitemaps()
         
     safe_execute("EXPANSION_PLANNING", expansion_sequence, state)
     
