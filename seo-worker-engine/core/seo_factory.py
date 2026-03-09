@@ -177,7 +177,15 @@ PHASE1_TABS = {
     'Indexing_Status': [['URL', 'Robots_Rule', 'Canonical', 'Index_Status']],
     'Crawl_Monitor': [['URL', 'Page_Type', 'Last_Indexed', 'Crawl_Frequency', 'Index_Status']],
     'Performance_Report': [['URL', 'Page_Size_KB', 'Load_Time_MS', 'Issue', 'Status']],
-    'Lead_System_Test': [['URL', 'Event_Type', 'Logged_Correctly', 'Status']]
+    'Lead_System_Test': [['URL', 'Event_Type', 'Logged_Correctly', 'Status']],
+    'Topic_Pillars': [['City', 'Topic', 'Slug', 'Pillar_Type', 'Priority', 'Exists', 'Needs_Generation']],
+    'Topic_Clusters': [['City', 'Parent_Pillar', 'Cluster_Topic', 'Slug', 'Page_Type', 'Priority', 'Exists', 'Needs_Generation']],
+    'Topic_Pages': [['City', 'Slug', 'Topic_Type', 'Parent_Pillar', 'Priority', 'Exists', 'Needs_Generation']],
+    'Topic_Links': [['Source_URL', 'Target_URL', 'Link_Type', 'Priority']],
+    'Content_Queue': [['Slug', 'Page_Type', 'City', 'Priority', 'Source_Module', 'Generation_Status', 'Scheduled_Date', 'Published_Status']],
+    'Publishing_Schedule': [['Date', 'Slug', 'Page_Type', 'City', 'Priority', 'Publish_Status']],
+    'Velocity_Config': [['Page_Type', 'Max_Per_Day', 'Max_Per_Week', 'Priority', 'Publish_Mode']],
+    'Publishing_Log': [['Date', 'Slug', 'Page_Type', 'Module_Source', 'Index_Status', 'Traffic_Status']]
 }
 
 
@@ -4043,7 +4051,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="SEO Factory: Audit, Sync, and Growth Engine")
     
     # Simple Positional Command
-    parser.add_argument('command', choices=['audit', 'sync', 'generate', 'discover', 'internal', 'update-internal', 'reinforce', 'autopilot', 'hubs', 'produce-subpages', 'sitemap', 'expand-locations', 'init-phase1', 'init-phase2', 'init-crime', 'init-schools', 'init-housing', 'init-commute', 'ingest-amenities', 'rebuild-internal-authority', 'generate-relocation-guides', 'ingest-demographics', 'generate-modifier-plan', 'expand-geo-clusters', 'generate-feature-pages', 'validate-data-blocks', 'calculate-authority-score', 'queue-data-reinforcements', 'build-command-center', 'build-master-site-map', 'sync-external-apis', 'materialize-pages', 'build-geo-grid', 'build-idx-traffic', 'detect-buyer-intent', 'sync-authority-signals', 'analyze-user-behavior', 'build-comparisons', 'generate-narratives', 'autonomous-run', 'deploy-pages', 'discover-neighborhoods', 'analyze-lead-performance', 'build-radius-pages', 'analyze-chat-intent', 'build-market-predictions', 'detect-seller-intent', 'build-migration-pages', 'build-authority-flywheel', 'system-audit', 'validate-generation', 'seo-audit', 'build-sitemap', 'deploy-preview'], help='Command to run')
+    parser.add_argument('command', choices=['audit', 'sync', 'generate', 'discover', 'internal', 'update-internal', 'reinforce', 'autopilot', 'hubs', 'produce-subpages', 'sitemap', 'expand-locations', 'init-phase1', 'init-phase2', 'init-crime', 'init-schools', 'init-housing', 'init-commute', 'ingest-amenities', 'rebuild-internal-authority', 'generate-relocation-guides', 'ingest-demographics', 'generate-modifier-plan', 'expand-geo-clusters', 'generate-feature-pages', 'validate-data-blocks', 'calculate-authority-score', 'queue-data-reinforcements', 'build-command-center', 'build-master-site-map', 'sync-external-apis', 'materialize-pages', 'build-geo-grid', 'build-idx-traffic', 'detect-buyer-intent', 'sync-authority-signals', 'analyze-user-behavior', 'build-comparisons', 'generate-narratives', 'autonomous-run', 'deploy-pages', 'discover-neighborhoods', 'analyze-lead-performance', 'build-radius-pages', 'analyze-chat-intent', 'build-market-predictions', 'detect-seller-intent', 'build-migration-pages', 'build-topic-authority', 'build-authority-flywheel', 'system-audit', 'validate-generation', 'seo-audit', 'build-sitemap', 'deploy-preview', 'run-publishing-cycle'], help='Command to run')
     
     # Optional Arguments for 'generate'
     parser.add_argument('--type', choices=['location', 'service', 'blog', 'newsletter'], help='Type of page to generate')
@@ -4195,6 +4203,9 @@ if __name__ == "__main__":
     elif args.command == 'build-migration-pages':
         import migration_intelligence_engine as mie
         mie.build_migration_pages()
+    elif args.command == 'build-topic-authority':
+        import topic_authority_engine as tae
+        tae.build_topic_authority()
     elif args.command == 'build-authority-flywheel':
         import authority_flywheel_engine as afe
         afe.build_authority_flywheel()
@@ -4213,5 +4224,8 @@ if __name__ == "__main__":
     elif args.command == 'deploy-preview':
         import system_qa_engine as qa
         qa.deploy_preview()
+    elif args.command == 'run-publishing-cycle':
+        import content_velocity_engine as cve
+        cve.schedule_content_velocity()
     else:
         parser.print_help()
