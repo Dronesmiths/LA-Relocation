@@ -75,7 +75,8 @@ nav a:hover {
 
     .menu-toggle {
         display: block;
-        z-index: 1001; /* Above the nav overlay */
+        z-index: 1001;
+        /* Above the nav overlay */
     }
 
     nav {
@@ -1306,6 +1307,14 @@ nav a:hover {
     position: relative;
     display: inline-block;
     overflow: hidden;
+}
+
+/* Give the transparent RE/MAX logo a white backdrop */
+.shine-wrap img {
+    background-color: #ffffff !important;
+    padding: 20px !important;
+    box-sizing: border-box !important;
+    border-radius: 15px !important;
 }
 
 .shine-overlay {
