@@ -1,0 +1,1 @@
+When it comes to safety and peace of mind, {{CITY_WINNER}} ranks higher overall, showing a more favorable crime index. {{CITY_A}} operates with a safety index of {{CRIME_A}} while {{CITY_B}} sits at {{CRIME_B}} (Lower is generally safer across these comparative metrics).

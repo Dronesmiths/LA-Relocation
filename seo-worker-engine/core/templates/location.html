@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{LOCATION}} Real Estate & Relocation Guide | LA Relocation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --accent: #c5a059;
+            --text: #333;
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Outfit', sans-serif;
+            margin: 0;
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover;
+            height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: -50px auto 50px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            padding: 50px;
+            position: relative;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--primary);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .data-card {
+            background: var(--light-bg);
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 4px solid var(--accent);
+        }
+
+        .data-card h3 {
+            margin-top: 0;
+            color: var(--primary);
+        }
+
+        .metric {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin: 10px 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        .nav-links a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: var(--accent);
+        }
+
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="hero">
+        <div>
+            <h1>{{LOCATION}}</h1>
+            <p>The Ultimate Relocation & Real Estate Authority</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="section">
+            <h2>Market Intelligence</h2>
+            <div class="grid">
+                {{MARKET_DATA}}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Community & Safety</h2>
+            <div class="grid">
+                {{CRIME_STATS}}
+                {{SCHOOL_RATINGS}}
+                {{DEMOGRAPHICS}}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Mobility & Commute</h2>
+            <div class="grid">
+                {{COMMUTE_DATA}}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Location Lifestyle</h2>
+            <div class="grid">
+                {{AMENITIES}}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Neighborhood Guides</h2>
+            <div class="nav-links">
+                {{NEIGHBORHOOD_GUIDE}}
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Relocation Resources</h2>
+            <div class="nav-links">
+                {{INTERNAL_BLOGS}}
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 LA Relocation | Powered by Master SEO Engine v2.0</p>
+    </footer>
+</body>
+
+</html>

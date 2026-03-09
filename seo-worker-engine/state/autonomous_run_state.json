@@ -1,0 +1,23 @@
+{
+    "run_id": "508b29d1-a240-42f2-8a7f-00c5c430c194",
+    "start_time": "2026-03-09T02:18:21.542758",
+    "end_time": "2026-03-09T02:18:45.938095",
+    "mode": "audit_only",
+    "stages_completed": [
+        "DATA_SYNC",
+        "DEMAND_DISCOVERY",
+        "AUTHORITY_ENRICHMENT",
+        "EXPANSION_PLANNING",
+        "QUALITY_VALIDATION",
+        "COMMAND_CENTER_REFRESH"
+    ],
+    "stages_failed": [
+        "BEHAVIOR_ANALYSIS",
+        "SYSTEM_HEALTH_EVAL"
+    ],
+    "pages_materialized": 0,
+    "reinforcements_triggered": 0,
+    "new_opportunities_found": 0,
+    "deployment_ready": 0,
+    "status": "Partial_Success"
+}

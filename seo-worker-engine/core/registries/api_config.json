@@ -1,0 +1,20 @@
+{
+    "market_data": {
+        "provider": "Zillow/RealtyMole_Mock",
+        "endpoint": "https://api.mock-realty.com/v1/market",
+        "api_key": "MOCK_KEY_REQUIRED",
+        "status": "active"
+    },
+    "crime_data": {
+        "provider": "FBI_UCR_API",
+        "endpoint": "https://api.fbi.gov/ucr/mock",
+        "api_key": "MOCK_KEY_REQUIRED",
+        "status": "active"
+    },
+    "school_data": {
+        "provider": "GreatSchools_Mock",
+        "endpoint": "https://api.greatschools.mock/v1",
+        "api_key": "MOCK_KEY_REQUIRED",
+        "status": "active"
+    }
+}

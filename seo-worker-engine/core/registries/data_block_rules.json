@@ -1,0 +1,22 @@
+{
+    "location": [
+        "market",
+        "crime",
+        "schools",
+        "commute",
+        "amenities",
+        "demographics"
+    ],
+    "neighborhood": [
+        "market",
+        "crime",
+        "schools",
+        "amenities"
+    ],
+    "blog": [
+        "demographics",
+        "crime",
+        "schools",
+        "commute"
+    ]
+}

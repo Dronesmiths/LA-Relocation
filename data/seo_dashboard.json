@@ -1,0 +1,59 @@
+{
+  "site": {
+    "total_pages": 75,
+    "clusters": 3,
+    "last_sync": "2026-03-09T00:32:21.110408"
+  },
+  "clusters": [
+    {
+      "name": "los-angeles-homes",
+      "url": "-",
+      "pages": 0,
+      "gravity": 0.0,
+      "opportunity": 0,
+      "status": "Growth",
+      "recommended_action": "Expand"
+    },
+    {
+      "name": "santa-clarita-real-estate",
+      "url": "-",
+      "pages": 0,
+      "gravity": 0.0,
+      "opportunity": 0,
+      "status": "Growth",
+      "recommended_action": "Expand"
+    },
+    {
+      "name": "antelope-valley-homes",
+      "url": "-",
+      "pages": 0,
+      "gravity": 0.0,
+      "opportunity": 0,
+      "status": "Expansion Needed",
+      "recommended_action": "Build Cluster"
+    }
+  ],
+  "opportunities": [
+    "Los Angeles Homes for Sale focus",
+    "Los Angeles Homes for Sale focus",
+    "Los Angeles Homes for Sale focus",
+    "Los Angeles Homes for Sale focus",
+    "Los Angeles Homes for Sale focus",
+    "Los Angeles Homes for Sale focus",
+    "Los Angeles Homes for Sale focus",
+    "Los Angeles Homes for Sale focus",
+    "Santa Clarita Real Estate focus",
+    "Santa Clarita Real Estate focus",
+    "Santa Clarita Real Estate focus",
+    "Santa Clarita Real Estate focus",
+    "Santa Clarita Real Estate focus",
+    "Santa Clarita Real Estate focus",
+    "Santa Clarita Real Estate focus",
+    "Santa Clarita Real Estate focus",
+    "Palmdale and Lancaster Homes for Sale focus",
+    "Palmdale and Lancaster Homes for Sale focus",
+    "Palmdale and Lancaster Homes for Sale focus",
+    "Palmdale and Lancaster Homes for Sale focus"
+  ],
+  "reinforcement_tasks": []
+}

@@ -1,0 +1,1 @@
+For families prioritizing education, {{CITY_WINNER}} provides slightly stronger metrics on average, effectively balancing household demographics and localized school ratings. To compare, standard school ratings in {{CITY_A}} average {{SCHOOL_A}}/10, whereas {{CITY_B}} averages {{SCHOOL_B}}/10.

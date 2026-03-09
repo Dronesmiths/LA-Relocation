@@ -1,0 +1,29 @@
+[
+    [
+        "los-angeles-homes",
+        "https://larelocation.com/",
+        "Los Angeles Homes for Sale",
+        20,
+        1,
+        19,
+        "High"
+    ],
+    [
+        "santa-clarita-real-estate",
+        "https://larelocation.com/santa-clarita/",
+        "Santa Clarita Real Estate",
+        20,
+        1,
+        19,
+        "High"
+    ],
+    [
+        "antelope-valley-homes",
+        "https://larelocation.com/palmdale/",
+        "Palmdale and Lancaster Homes for Sale",
+        15,
+        2,
+        13,
+        "Medium"
+    ]
+]

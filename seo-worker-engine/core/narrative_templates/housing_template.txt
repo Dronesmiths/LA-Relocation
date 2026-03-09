@@ -1,0 +1,1 @@
+Homes in {{CITY_WINNER}} are currently about {{PRICE_DIFF}}% more affordable than in {{CITY_LOSER}}, making it a popular choice for buyers prioritizing lower purchase prices. The median home price in {{CITY_A}} sits around ${{PRICE_A}}, compared to ${{PRICE_B}} in {{CITY_B}}.

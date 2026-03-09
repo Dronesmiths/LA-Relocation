@@ -1,0 +1,1 @@
+Daily mobility is often the ultimate deciding factor for Los Angeles county boundary commuters. Residents of {{CITY_WINNER}} generally experience more predictable transit times into major employment hubs. The average commute in {{CITY_A}} is approximately {{COMMUTE_A}} minutes, compared to {{COMMUTE_B}} minutes in {{CITY_B}}.

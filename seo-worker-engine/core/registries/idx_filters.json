@@ -1,0 +1,29 @@
+{
+    "price_ranges": [
+        "under-300k",
+        "under-400k",
+        "under-500k",
+        "500k-700k",
+        "700k-plus"
+    ],
+    "bedrooms": [
+        "2-bedroom",
+        "3-bedroom",
+        "4-bedroom",
+        "5-bedroom"
+    ],
+    "property_types": [
+        "single-family",
+        "condos",
+        "townhomes",
+        "luxury-homes",
+        "new-construction"
+    ],
+    "features": [
+        "pool-homes",
+        "rv-parking",
+        "horse-property",
+        "gated-community",
+        "large-lot"
+    ]
+}

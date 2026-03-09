@@ -27,9 +27,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.querySelector('.menu-toggle');
     const navUl = document.querySelector('nav ul');
 
-    if (menuToggle && navUl) {
+    if (menuToggle && document.querySelector('nav')) {
+      const nav = document.querySelector('nav');
       menuToggle.addEventListener('click', function () {
-        navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
+        nav.classList.toggle('active');
+        // Optional: Toggle icon state if needed
       });
     }
   }, 50); // Small delay to ensuring DOM insertion

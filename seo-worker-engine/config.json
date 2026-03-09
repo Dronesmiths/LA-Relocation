@@ -1,0 +1,37 @@
+{
+    "PROJECT_NAME": "la-relocation",
+    "DOMAIN": "https://larelocation.com",
+    "GSC_SITE_URL": "sc-domain:larelocation.com",
+    "SPREADSHEET_ID": "1PLz1Qcal3pLNcHakdm6qSW_txATVHbte3-T8Sh6UCVY",
+    "WEBSITE_DIR": "../",
+    "SITEMAP_FILENAME": "sitemap.xml",
+    "SERVICE_ACCOUNT_FILE": "GOOGLE KEYS/service-account.json",
+    "SITEMAP_MAPPING": {
+        "📂 SERVICE PAGES": [
+            "/services/",
+            "/search-homes/",
+            "/sell-your-home/"
+        ],
+        "✍️ BLOG ARTICLES": [
+            "/blog/"
+        ],
+        "📍 LOCATIONS": [
+            "/santa-clarita/",
+            "/palmdale/",
+            "/lancaster/",
+            "/burbank/",
+            "/glendale/",
+            "/long-beach/",
+            "/torrance/",
+            "/whittier/",
+            "/inglewood/",
+            "/downey/",
+            "/pasadena/",
+            "/los-angeles-county/",
+            "/orange-county/",
+            "/riverside/",
+            "/san-bernardino/",
+            "/ventura-county/"
+        ]
+    }
+}

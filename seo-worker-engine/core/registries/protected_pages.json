@@ -1,0 +1,13 @@
+{
+    "protected_urls": [
+        "/",
+        "/about-us/",
+        "/contact/",
+        "/privacy-policy/",
+        "/terms/"
+    ],
+    "protected_types": [
+        "Legal",
+        "System"
+    ]
+}

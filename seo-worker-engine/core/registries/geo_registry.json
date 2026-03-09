@@ -1,0 +1,10 @@
+{
+    "geo_types": [
+        "city",
+        "neighborhood",
+        "zip",
+        "census_tract",
+        "subdivision",
+        "radius_cluster"
+    ]
+}
