@@ -765,42 +765,68 @@ nav a:hover {
     margin-inline: auto;
 }
 
-/* Static Awards Grid */
+/* Awards Info Cards Grid */
 .awards-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 60px;
-    padding: 30px 20px 0;
-    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 20px 20px 0;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.award-card {
+.award-info-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 35px 25px;
+    text-align: center;
+    transition: transform .4s ease, background .4s ease;
+}
+
+.award-info-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.award-info-card .award-badge {
+    height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-bottom: 25px;
 }
 
-.award-card img {
-    width: 100%;
-    max-width: 125px;
-    height: auto;
+.award-info-card img {
+    max-height: 90px;
+    width: auto;
     object-fit: contain;
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.6)) brightness(1.1);
-    transition: transform .4s ease, filter .4s ease, opacity .4s ease;
-    opacity: 0.95;
+    transition: transform .4s ease, filter .4s ease;
 }
 
-.award-card:hover img {
+.award-info-card:hover img {
     transform: scale(1.08);
     filter: drop-shadow(0 0 25px rgba(230, 57, 70, 0.45)) brightness(1.2);
-    opacity: 1;
+}
+
+.award-info-card h3 {
+    font-size: 21px;
+    color: #fff;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.award-info-card p {
+    font-size: 15.5px;
+    color: #bbb;
+    line-height: 1.6;
+    margin: 0;
 }
 
 @media (max-width: 1024px) {
-    .award-card img {
-        max-width: 105px;
+    .awards-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -815,11 +841,8 @@ nav a:hover {
     }
 
     .awards-grid {
-        gap: 40px;
-    }
-
-    .award-card img {
-        max-width: 90px;
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 }
 
