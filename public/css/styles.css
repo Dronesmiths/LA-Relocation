@@ -912,7 +912,7 @@ nav a:hover {
 
     #final-cta p {
         font-size: 17px;
-        margin-bottom: 30px;
+        margin: 0 auto 30px !important;
     }
 
     #final-cta a {
