@@ -15,6 +15,7 @@ import idx_page_generator as idx
 import comparative_intelligence as comp
 import knowledge_fabric as kf
 import materializer as mat
+import cloud_deployer as deployer
 
 """
 ORCHESTRATOR STAGES:
@@ -191,6 +192,9 @@ def run_autonomous(mode="full_autonomous"):
         elif mode == "full_autonomous":
             # DEPLOYMENT PREP
             safe_execute("DEPLOYMENT_PREP", lambda: prep_deployment(state), state)
+            
+            # DEPLOYMENT
+            safe_execute("DEPLOYMENT", lambda: deployer.deploy_pages(mode=mode, with_git=True), state)
 
     # Refresh Dashboards Finally
     safe_execute("COMMAND_CENTER_REFRESH", lambda: sf.cmd_build_command_center(), state)

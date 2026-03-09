@@ -1,0 +1,19 @@
+{
+    "provider": "github_actions",
+    "build_command": "npm run build",
+    "site_output_dir": "dist",
+    "deployment_target": "s3://your-bucket-name",
+    "cdn_provider": "cloudflare",
+    "cdn_distribution_id": "YOUR_DIST_ID",
+    "cache_purge_enabled": true,
+    "sitemap_urls": [
+        "https://larelocation.com/sitemap.xml"
+    ],
+    "notify_search_engines": true,
+    "protected_deploy_mode": true,
+    "git_integration": {
+        "enabled": true,
+        "commit_message_prefix": "[SEO Engine]",
+        "auto_push": true
+    }
+}

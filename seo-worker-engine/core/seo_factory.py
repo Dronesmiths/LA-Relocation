@@ -4005,14 +4005,15 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="SEO Factory: Audit, Sync, and Growth Engine")
     
     # Simple Positional Command
-    parser.add_argument('command', choices=['audit', 'sync', 'generate', 'discover', 'internal', 'update-internal', 'reinforce', 'autopilot', 'hubs', 'produce-subpages', 'sitemap', 'expand-locations', 'init-phase1', 'init-phase2', 'init-crime', 'init-schools', 'init-housing', 'init-commute', 'ingest-amenities', 'rebuild-internal-authority', 'generate-relocation-guides', 'ingest-demographics', 'generate-modifier-plan', 'expand-geo-clusters', 'generate-feature-pages', 'validate-data-blocks', 'calculate-authority-score', 'queue-data-reinforcements', 'build-command-center', 'build-master-site-map', 'sync-external-apis', 'materialize-pages', 'build-geo-grid', 'build-idx-traffic', 'detect-buyer-intent', 'sync-authority-signals', 'analyze-user-behavior', 'build-comparisons', 'generate-narratives', 'autonomous-run'], help='Command to run')
+    parser.add_argument('command', choices=['audit', 'sync', 'generate', 'discover', 'internal', 'update-internal', 'reinforce', 'autopilot', 'hubs', 'produce-subpages', 'sitemap', 'expand-locations', 'init-phase1', 'init-phase2', 'init-crime', 'init-schools', 'init-housing', 'init-commute', 'ingest-amenities', 'rebuild-internal-authority', 'generate-relocation-guides', 'ingest-demographics', 'generate-modifier-plan', 'expand-geo-clusters', 'generate-feature-pages', 'validate-data-blocks', 'calculate-authority-score', 'queue-data-reinforcements', 'build-command-center', 'build-master-site-map', 'sync-external-apis', 'materialize-pages', 'build-geo-grid', 'build-idx-traffic', 'detect-buyer-intent', 'sync-authority-signals', 'analyze-user-behavior', 'build-comparisons', 'generate-narratives', 'autonomous-run', 'deploy-pages'], help='Command to run')
     
     # Optional Arguments for 'generate'
     parser.add_argument('--type', choices=['location', 'service', 'blog', 'newsletter'], help='Type of page to generate')
     parser.add_argument('--name', help='Name/Title of the page')
     parser.add_argument('--dry-run', action='store_true', help='Perform a dry run without making changes')
-    parser.add_argument('--mode', choices=['audit_only', 'build_only', 'full_autonomous'], default='full_autonomous', help='Mode for autonomous run')
-
+    parser.add_argument('--mode', choices=['audit_only', 'build_only', 'full_autonomous', 'preview'], default='full_autonomous', help='Mode for autonomous run')
+    parser.add_argument('--with-git', action='store_true', help='Use Git commit/push in deployment mode')
+    
     args = parser.parse_args()
 
     if args.command == 'audit':
@@ -4132,5 +4133,8 @@ if __name__ == "__main__":
         cmd_rebuild_internal_authority()
         cmd_build_command_center()
         print("AUTOPILOT COMPLETE")
+    elif args.command == 'deploy-pages':
+        import cloud_deployer as deployer
+        deployer.deploy_pages(mode=args.mode, with_git=args.with_git)
     else:
         parser.print_help()
