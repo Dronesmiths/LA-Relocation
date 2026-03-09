@@ -175,6 +175,7 @@ PHASE1_TABS = {
     'SEO_Audit': [['URL', 'Title', 'Meta_Description', 'H1', 'Status_Code', 'Issue', 'Priority']],
     'Authority_Audit': [['URL', 'Hub_Support_Status', 'Parent_Links', 'Issue_Type', 'Priority']],
     'Indexing_Status': [['URL', 'Robots_Rule', 'Canonical', 'Index_Status']],
+    'Crawl_Monitor': [['URL', 'Page_Type', 'Last_Indexed', 'Crawl_Frequency', 'Index_Status']],
     'Performance_Report': [['URL', 'Page_Size_KB', 'Load_Time_MS', 'Issue', 'Status']],
     'Lead_System_Test': [['URL', 'Event_Type', 'Logged_Correctly', 'Status']]
 }
