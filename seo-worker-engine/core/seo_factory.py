@@ -164,7 +164,12 @@ PHASE1_TABS = {
     'Migration_Flows': [['Origin_City', 'Destination_City', 'Distance_Miles', 'Median_Price_Diff', 'Crime_Diff', 'School_Diff', 'Commute_Diff', 'Migration_Trend', 'Search_Demand', 'Priority']],
     'Migration_Signals': [['Signal_ID', 'Source_Type', 'Origin', 'Destination', 'Intent_Score', 'Last_Detected']],
     'Migration_Insights': [['Origin_City', 'Destination_City', 'Insight_Type', 'Insight', 'Supporting_Data', 'Recommended_Page', 'Priority']],
-    'Migration_Pages': [['Origin_City', 'Destination_City', 'Slug', 'Page_Angle', 'Page_Type', 'Priority', 'Exists', 'Needs_Generation']]
+    'Migration_Pages': [['Origin_City', 'Destination_City', 'Slug', 'Page_Angle', 'Page_Type', 'Priority', 'Exists', 'Needs_Generation']],
+    'Authority_Hubs': [['Hub_URL', 'Hub_Type', 'City', 'Primary_Topic', 'Supporting_Page_Count', 'Authority_Status', 'Priority']],
+    'Authority_Loops': [['Loop_ID', 'Primary_Hub', 'Supporting_URL', 'Page_Type', 'Anchor_Angle', 'Loop_Type', 'Priority', 'Status']],
+    'Authority_Links': [['Source_URL', 'Target_URL', 'Anchor_Text', 'Anchor_Type', 'Link_Context', 'Priority', 'Status']],
+    'Authority_Gaps': [['URL', 'Page_Type', 'Missing_Link_Type', 'Recommended_Target', 'Priority', 'Status']],
+    'Authority_Flywheel_Score': [['City', 'Total_Pages_In_Cluster', 'Hub_Count', 'Loop_Count', 'Internal_Link_Coverage', 'Semantic_Anchor_Diversity', 'Gap_Count', 'Hub_Gravity_Score', 'Flywheel_Score', 'Recommended_Action']]
 }
 
 
@@ -4030,7 +4035,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="SEO Factory: Audit, Sync, and Growth Engine")
     
     # Simple Positional Command
-    parser.add_argument('command', choices=['audit', 'sync', 'generate', 'discover', 'internal', 'update-internal', 'reinforce', 'autopilot', 'hubs', 'produce-subpages', 'sitemap', 'expand-locations', 'init-phase1', 'init-phase2', 'init-crime', 'init-schools', 'init-housing', 'init-commute', 'ingest-amenities', 'rebuild-internal-authority', 'generate-relocation-guides', 'ingest-demographics', 'generate-modifier-plan', 'expand-geo-clusters', 'generate-feature-pages', 'validate-data-blocks', 'calculate-authority-score', 'queue-data-reinforcements', 'build-command-center', 'build-master-site-map', 'sync-external-apis', 'materialize-pages', 'build-geo-grid', 'build-idx-traffic', 'detect-buyer-intent', 'sync-authority-signals', 'analyze-user-behavior', 'build-comparisons', 'generate-narratives', 'autonomous-run', 'deploy-pages', 'discover-neighborhoods', 'analyze-lead-performance', 'build-radius-pages', 'analyze-chat-intent', 'build-market-predictions', 'detect-seller-intent', 'build-migration-pages'], help='Command to run')
+    parser.add_argument('command', choices=['audit', 'sync', 'generate', 'discover', 'internal', 'update-internal', 'reinforce', 'autopilot', 'hubs', 'produce-subpages', 'sitemap', 'expand-locations', 'init-phase1', 'init-phase2', 'init-crime', 'init-schools', 'init-housing', 'init-commute', 'ingest-amenities', 'rebuild-internal-authority', 'generate-relocation-guides', 'ingest-demographics', 'generate-modifier-plan', 'expand-geo-clusters', 'generate-feature-pages', 'validate-data-blocks', 'calculate-authority-score', 'queue-data-reinforcements', 'build-command-center', 'build-master-site-map', 'sync-external-apis', 'materialize-pages', 'build-geo-grid', 'build-idx-traffic', 'detect-buyer-intent', 'sync-authority-signals', 'analyze-user-behavior', 'build-comparisons', 'generate-narratives', 'autonomous-run', 'deploy-pages', 'discover-neighborhoods', 'analyze-lead-performance', 'build-radius-pages', 'analyze-chat-intent', 'build-market-predictions', 'detect-seller-intent', 'build-migration-pages', 'build-authority-flywheel'], help='Command to run')
     
     # Optional Arguments for 'generate'
     parser.add_argument('--type', choices=['location', 'service', 'blog', 'newsletter'], help='Type of page to generate')
@@ -4182,5 +4187,8 @@ if __name__ == "__main__":
     elif args.command == 'build-migration-pages':
         import migration_intelligence_engine as mie
         mie.build_migration_pages()
+    elif args.command == 'build-authority-flywheel':
+        import authority_flywheel_engine as afe
+        afe.build_authority_flywheel()
     else:
         parser.print_help()

@@ -23,6 +23,7 @@ import ai_chat_agent as ai_chat
 import market_prediction_engine as mpe
 import seller_intent_detection as seller_intent
 import migration_intelligence_engine as mie
+import authority_flywheel_engine as afe
 
 """
 ORCHESTRATOR STAGES:
@@ -182,6 +183,7 @@ def run_autonomous(mode="full_autonomous"):
         geo_radius.build_radius_pages()
         mpe.build_market_predictions()
         mie.build_migration_pages()
+        afe.build_authority_flywheel()
         sf.cmd_build_master_site_map()
         
     safe_execute("EXPANSION_PLANNING", expansion_sequence, state)
