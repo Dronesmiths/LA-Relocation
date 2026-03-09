@@ -892,9 +892,13 @@ nav a:hover {
 /* 📱 Responsive Layout */
 @media (max-width: 900px) {
     #final-cta {
-        text-align: center;
+        text-align: center !important;
         padding: 80px 20px;
         background: linear-gradient(to bottom, #111 10%, #000 90%);
+    }
+
+    #final-cta>div>div:first-child>div {
+        justify-content: center !important;
     }
 
     #final-cta img {
