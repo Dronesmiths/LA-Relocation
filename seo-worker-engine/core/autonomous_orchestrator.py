@@ -40,6 +40,7 @@ import schema_engine as sche
 import data_widget_engine as dwe
 import system_qa_engine as qa
 import trust_signal_engine as tse
+import neighborhood_profile_variance_engine as npve
 
 """
 ORCHESTRATOR STAGES:
@@ -194,6 +195,7 @@ def run_autonomous(mode="full_autonomous"):
     def expansion_sequence():
         sf.cmd_expand_geo_clusters()
         nd.discover_neighborhoods()
+        npve.build_neighborhood_profiles()
         idx.build_idx_traffic()
         ife.build_idx_filter_pages()
         comp.build_comparisons()
