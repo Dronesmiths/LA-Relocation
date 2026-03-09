@@ -285,7 +285,7 @@ nav a:hover {
     }
 
     .slide-content h1 {
-        font-size: 26px;
+        font-size: clamp(32px, 8.5vw, 40px);
     }
 
     .slide-content p {
@@ -369,7 +369,7 @@ nav a:hover {
 /* 📸 Image Column */
 .photo-frame {
     flex: 1 1 380px;
-    max-width: 380px;
+    max-width: 480px;
     line-height: 0;
     margin: 0 auto -20px !important;
     padding-bottom: 0 !important;
@@ -399,7 +399,7 @@ nav a:hover {
     }
 
     .photo-frame {
-        max-width: 340px;
+        max-width: 440px;
         margin: 0 auto -20px !important;
     }
 
@@ -438,7 +438,7 @@ nav a:hover {
     }
 
     .photo-frame {
-        max-width: 280px;
+        max-width: 360px;
         margin: 0 auto -25px !important;
     }
 
