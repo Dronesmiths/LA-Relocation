@@ -87,3 +87,44 @@ async function handleRelocationSubmit(event, formType) {
 window.openRelocationModal = openRelocationModal;
 window.closeRelocationModal = closeRelocationModal;
 window.handleRelocationSubmit = handleRelocationSubmit;
+
+// 📊 HUD FILTER LOGIC (Algorithmic Matcher)
+function hudFilter(category, btnElement) {
+    // 1. Update Active state on buttons
+    document.querySelectorAll('.hud-filter').forEach(btn => btn.classList.remove('matcher-active'));
+    btnElement.classList.add('matcher-active');
+
+    // 2. Filter Grid Items
+    const items = document.querySelectorAll('.hud-item');
+    items.forEach(item => {
+        // Reset states
+        item.classList.remove('dimmed', 'highlighted');
+
+        if (category === 'all') {
+            // Do nothing, leave default
+        } else {
+            // Check if item has the correct target class (e.g. hud-commute)
+            if (item.classList.contains('hud-' + category)) {
+                item.classList.add('highlighted');
+            } else {
+                item.classList.add('dimmed');
+            }
+        }
+    });
+}
+window.hudFilter = hudFilter;
+
+// 📊 LIVE TELEMETRY TICKER MOCKUP
+document.addEventListener('DOMContentLoaded', () => {
+    setInterval(() => {
+        document.querySelectorAll('.crypto-ticker').forEach(ticker => {
+            let currentVal = parseInt(ticker.innerText);
+            if (isNaN(currentVal)) return;
+            // Randomly tick up, down, or stay the same (-1, 0, 1)
+            let change = Math.floor(Math.random() * 3) - 1;
+            if (currentVal + change > 0) {
+                ticker.innerText = currentVal + change;
+            }
+        });
+    }, 2500); // Ticks every 2.5 seconds
+});

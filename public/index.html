@@ -281,8 +281,8 @@
     </div>
   </section>
 
-  <!-- 🏙️ FEATURE GRID – LOS ANGELES HOMES EDITION -->
-  <section id="feature-grid" style="padding:100px 20px;background:#fff;">
+  <!-- 🏙️ RELOCATION TELEMETRY GRID – HUD MODULE -->
+  <section id="feature-grid" style="padding:100px 20px;background:#050505;color:#fff;">
     <div style="max-width:1150px;margin:auto;text-align:center;">
 
       <h2 style="
@@ -291,48 +291,124 @@
       text-transform:uppercase;
       font-size:clamp(34px,6vw,60px);
       line-height:1.1;
-      margin-bottom:60px;
-      color:#111;
+      margin-bottom:20px;
+      color:#fff;
       letter-spacing:1px;">
-        Explore <span style="color:#e63946;">Los Angeles</span> Living
+        Algorithmic <span style="color:#e63946;">Market Matcher</span>
       </h2>
 
-      <div class="grid-container">
+      <!-- The Algorithmic Matcher Filters -->
+      <div style="margin-bottom:60px;display:flex;justify-content:center;gap:15px;flex-wrap:wrap;">
+        <span
+          style="font-family:'Roboto Condensed',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888;display:flex;align-items:center;margin-right:10px;">Calibrate
+          Focus:</span>
+        <button class="hud-filter matcher-active" onclick="hudFilter('all', this)">All Regions</button>
+        <button class="hud-filter" onclick="hudFilter('commute', this)">[Optimize: Commute]</button>
+        <button class="hud-filter" onclick="hudFilter('schools', this)">[Optimize: Schools]</button>
+        <button class="hud-filter" onclick="hudFilter('investment', this)">[Optimize: ROI]</button>
+      </div>
+
+      <div class="grid-container hud-grid">
 
         <!-- 1️⃣ HOLLYWOOD HILLS -->
-        <div class="grid-item red" style="background-image:url('/images/Hollywood-Hills.webp');">
-          <div class="overlay red"></div>
-          <div class="grid-text"><span>HOLLYWOOD HILLS</span></div>
+        <div class="grid-item hud-item hud-investment hud-commute"
+          style="background-image:url('/images/Hollywood-Hills.webp');">
+          <div class="hud-overlay">
+            <div class="hud-scanline"></div>
+            <div class="hud-telemetry">
+              <div class="hud-title">HOLLYWOOD HILLS</div>
+              <div class="hud-stat"><span>STATUS:</span> HIGH CORPORATE DEMAND</div>
+              <div class="hud-stat"><span>COMMUTE (DTLA):</span> 25 MINS</div>
+              <div class="hud-stat"><span>YOY APPRECIATION:</span> +14.2%</div>
+              <div class="hud-stat"><span>SCHOOL RATING:</span> 8/10</div>
+              <button class="hud-btn" onclick="openRelocationModal('inbound')">[REQUEST DEEP DIVE]</button>
+            </div>
+            <div class="hud-ticker">ACTIVE INVENTORY: <span class="crypto-ticker">42</span></div>
+          </div>
         </div>
 
         <!-- 2️⃣ DOWNTOWN CONDOS -->
-        <div class="grid-item" style="background-image:url('/images/Downtown-Condos.webp');">
-          <div class="overlay"></div>
-          <div class="grid-text"><span>DOWNTOWN CONDOS</span></div>
+        <div class="grid-item hud-item hud-commute" style="background-image:url('/images/Downtown-Condos.webp');">
+          <div class="hud-overlay">
+            <div class="hud-scanline"></div>
+            <div class="hud-telemetry">
+              <div class="hud-title">DOWNTOWN CONDOS</div>
+              <div class="hud-stat"><span>STATUS:</span> HIGH WALKABILITY</div>
+              <div class="hud-stat"><span>COMMUTE (LA LIVE):</span> 5 MINS</div>
+              <div class="hud-stat"><span>YOY APPRECIATION:</span> +6.1%</div>
+              <div class="hud-stat"><span>CULTURE INDEX:</span> 98/100</div>
+              <button class="hud-btn" onclick="openRelocationModal('inbound')">[REQUEST DEEP DIVE]</button>
+            </div>
+            <div class="hud-ticker">ACTIVE INVENTORY: <span class="crypto-ticker">118</span></div>
+          </div>
         </div>
 
         <!-- 3️⃣ LUXURY HOMES -->
-        <div class="grid-item red" style="background-image:url('/images/Luxury-Homes-in-Los-Angeles.webp');">
-          <div class="overlay red"></div>
-          <div class="grid-text"><span>LUXURY HOMES</span></div>
+        <div class="grid-item hud-item hud-investment hud-schools"
+          style="background-image:url('/images/Luxury-Homes-in-Los-Angeles.webp');">
+          <div class="hud-overlay">
+            <div class="hud-scanline"></div>
+            <div class="hud-telemetry">
+              <div class="hud-title">BEVERLY HILLS / BEL AIR</div>
+              <div class="hud-stat"><span>STATUS:</span> ULTRA LUXURY MARKET</div>
+              <div class="hud-stat"><span>SCHOOL RATING:</span> 10/10</div>
+              <div class="hud-stat"><span>MEDIAN DOM:</span> 45 DAYS</div>
+              <div class="hud-stat"><span>PRIVACY INDEX:</span> MAXIMUM</div>
+              <button class="hud-btn" onclick="openRelocationModal('inbound')">[REQUEST DEEP DIVE]</button>
+            </div>
+            <div class="hud-ticker">OFF-MARKET POCKETS: <span class="crypto-ticker">14</span></div>
+          </div>
         </div>
 
         <!-- 4️⃣ COASTAL HOMES -->
-        <div class="grid-item" style="background-image:url('/images/Coastal-Homes-in-Los-Angeles.webp');">
-          <div class="overlay"></div>
-          <div class="grid-text"><span>COASTAL HOMES</span></div>
+        <div class="grid-item hud-item hud-schools hud-investment"
+          style="background-image:url('/images/Coastal-Homes-in-Los-Angeles.webp');">
+          <div class="hud-overlay">
+            <div class="hud-scanline"></div>
+            <div class="hud-telemetry">
+              <div class="hud-title">SILICON BEACH (COASTAL)</div>
+              <div class="hud-stat"><span>STATUS:</span> TECH HUB EXPANSION</div>
+              <div class="hud-stat"><span>COMMUTE (LAX):</span> 15 MINS</div>
+              <div class="hud-stat"><span>YOY APPRECIATION:</span> +18.5%</div>
+              <div class="hud-stat"><span>SCHOOL RATING:</span> 9/10</div>
+              <button class="hud-btn" onclick="openRelocationModal('inbound')">[REQUEST DEEP DIVE]</button>
+            </div>
+            <div class="hud-ticker">ACTIVE INVENTORY: <span class="crypto-ticker">27</span></div>
+          </div>
         </div>
 
         <!-- 5️⃣ VALLEY HOMES -->
-        <div class="grid-item red" style="background-image:url('/images/Valley-Homes-in-Los-Angeles.webp');">
-          <div class="overlay red"></div>
-          <div class="grid-text"><span>VALLEY HOMES</span></div>
+        <div class="grid-item hud-item hud-schools"
+          style="background-image:url('/images/Valley-Homes-in-Los-Angeles.webp');">
+          <div class="hud-overlay">
+            <div class="hud-scanline"></div>
+            <div class="hud-telemetry">
+              <div class="hud-title">SAN FERNANDO VALLEY</div>
+              <div class="hud-stat"><span>STATUS:</span> FAMILY FOCUSED</div>
+              <div class="hud-stat"><span>LOT SIZE:</span> +40% VS LA METRO</div>
+              <div class="hud-stat"><span>COMMUTE (STUDIOS):</span> 20 MINS</div>
+              <div class="hud-stat"><span>SCHOOL RATING:</span> 9/10</div>
+              <button class="hud-btn" onclick="openRelocationModal('inbound')">[REQUEST DEEP DIVE]</button>
+            </div>
+            <div class="hud-ticker">ACTIVE INVENTORY: <span class="crypto-ticker">84</span></div>
+          </div>
         </div>
 
         <!-- 6️⃣ NEW DEVELOPMENTS -->
-        <div class="grid-item" style="background-image:url('/images/Residential-Neighborhood.webp');">
-          <div class="overlay"></div>
-          <div class="grid-text"><span>NEW DEVELOPMENTS</span></div>
+        <div class="grid-item hud-item hud-investment"
+          style="background-image:url('/images/Residential-Neighborhood.webp');">
+          <div class="hud-overlay">
+            <div class="hud-scanline"></div>
+            <div class="hud-telemetry">
+              <div class="hud-title">SANTA CLARITA VALLEY</div>
+              <div class="hud-stat"><span>STATUS:</span> MASTER PLANNED</div>
+              <div class="hud-stat"><span>YOY APPRECIATION:</span> +22.1%</div>
+              <div class="hud-stat"><span>CRIME INDEX:</span> SAFEST 2%</div>
+              <div class="hud-stat"><span>SCHOOL RATING:</span> 10/10</div>
+              <button class="hud-btn" onclick="openRelocationModal('inbound')">[REQUEST DEEP DIVE]</button>
+            </div>
+            <div class="hud-ticker">NEW BUILD SITES: <span class="crypto-ticker">12</span></div>
+          </div>
         </div>
 
       </div>
